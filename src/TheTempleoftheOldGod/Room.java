@@ -149,14 +149,14 @@ public class Room {
             JSONObject er = (JSONObject) rooms.get("rooms2");    // <-------- Example to pick whatever you want from the json file
             System.out.println("\n" + er.get("roomDesc"));
         }
-//        JSONObject er = (JSONObject) rooms.get("rooms1");
+        JSONObject er = (JSONObject) rooms.get("rooms1");
 
 
 //        String roomID = (String) er.get("roomID");
-//        System.out.println("Room ID:"+ roomID);
+// System.out.println("Room ID:"+ roomID);
 //        System.out.println("");
-//        String roomTitle = (String) er.get("roomTitle");
-//        System.out.println("Room Title: " + roomTitle);
+//   String roomTitle = (String) er.get("roomTitle");
+  //      System.out.println("Room Title: " + roomTitle);
 //        System.out.println("");
 //        String roomDesc = (String) er.get("roomDesc");
 //        System.out.println("Room Description: " + roomDesc);
