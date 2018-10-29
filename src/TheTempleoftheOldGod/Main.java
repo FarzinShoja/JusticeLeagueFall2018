@@ -31,10 +31,11 @@ public class Main {
             while (true) {
                 Scanner sc = new Scanner(System.in);
                 System.out.println(" ");
-                System.out.println("~*^***************** The Temple of the Old God Room Beta *****************^*~ ");
-                System.out.println("--------------------- Type help to get The Room Titles ---------------------");
-                System.out.println("--------------------- Type Room Title Without Space ---------------------");
-                System.out.println("Enter: ");
+                System.out.println(" ");
+                System.out.println("                                  ~******************* The Temple of the Old God Room Beta ********************~ ");
+                System.out.println("                                   --------------------- Type help to get The Room Titles -------------------- ");
+                System.out.println("                                    --------------------- Type Room Title Without Space --------------------- ");
+                System.out.println("Enter Your Command: ");
                 String rid = sc.next();
 
                 if (rid.equalsIgnoreCase("help")) {
@@ -60,7 +61,7 @@ public class Main {
                     } else if (roomClass.getRoomExit1() != null && roomClass.getRoomExit2() != null) {
                         System.out.println("Available Exit: " + roomClass.getRoomExit1() + ", " + roomClass.getRoomExit2()
                                 + ", " + roomClass.getRoomExit3());
-                    } else {
+                    } else if (roomClass.getRoomExit1() != null) {
                         System.out.println("Available Exits: " + roomClass.getRoomExit1());
                     }
                     System.out.println(" ");
