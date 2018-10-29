@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 public class Room {
 
     private int RoomID;
+    private String allRoomTitles;
     private String roomTitle;
     private String roomDesc;
     private String roomItem;
@@ -35,6 +36,14 @@ public class Room {
 
     public void setRoomID(int roomID) {
         RoomID = roomID;
+    }
+
+    public String getAllRoomTitles() {
+        return allRoomTitles;
+    }
+
+    public void setAllRoomTitles(String allRoomTitles) {
+        this.allRoomTitles = allRoomTitles;
     }
 
     public String getRoomTitle() {
@@ -126,6 +135,12 @@ public class Room {
             setRoomExit3((String) jo.get("roomExit3"));
             setRoomExit4((String) jo.get("roomExit4"));
         }
+    }
 
+    public void allRoomTitle(JSONObject rooms) {
+
+        JSONObject jo = (JSONObject) rooms.get("rooms");
+        System.out.println("The Room Title-> " + jo.get("roomTitle"));
     }
 }
+

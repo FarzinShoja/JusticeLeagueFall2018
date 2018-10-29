@@ -30,34 +30,42 @@ public class Main {
 
             while (true) {
                 Scanner sc = new Scanner(System.in);
-                System.out.println("Enter The Room Title: ");
+                System.out.println(" ");
+                System.out.println("~*^***************** The Temple of the Old God Room Beta *****************^*~ ");
+                System.out.println("--------------------- Type help to get The Room Titles ---------------------");
+                System.out.println("--------------------- Type Room Title Without Space ---------------------");
+                System.out.println("Enter: ");
                 String rid = sc.next();
 
-                roomList.forEach(emp -> roomClass.getCurrentRoomInfo(rid, (JSONObject) emp));
-                System.out.println("Room Title: " + roomClass.getRoomTitle());
-                System.out.println("Room Description: " + roomClass.getRoomDesc());
-                System.out.println("Room Monster: " + roomClass.getRoomMons());
-                System.out.println("Room Item: " + roomClass.getRoomItem());
-                System.out.println("Room Puzzle: " + roomClass.getRoomPuzzle());
-
-
-                if (roomClass.getRoomExit4() != null && roomClass.getRoomExit3() != null) {
-                    System.out.println("Available Exits: " + roomClass.getRoomExit1() + "," + roomClass.getRoomExit2()
-                            + ", " + roomClass.getRoomExit3() + ", " + roomClass.getRoomExit4());
-                } else if (roomClass.getRoomExit1() != null && roomClass.getRoomExit2() != null
-                        && roomClass.getRoomExit3() != null) {
-                    System.out.println("Available Exits: " + roomClass.getRoomExit1() + ", " + roomClass.getRoomExit2()
-                            + ", " + roomClass.getRoomExit3());
-                } else if (roomClass.getRoomExit1() != null && roomClass.getRoomExit2() != null) {
-                    System.out.println("Available Exit: " + roomClass.getRoomExit1() + ", " + roomClass.getRoomExit2()
-                            + ", " + roomClass.getRoomExit3());
+                if (rid.equalsIgnoreCase("help")) {
+                    roomList.forEach(emp -> roomClass.allRoomTitle((JSONObject) emp));
+                } else if (rid.equalsIgnoreCase("quit")) {
+                    break;
                 } else {
-                    System.out.println("Available Exits: " + roomClass.getRoomExit1());
+                    roomList.forEach(emp -> roomClass.getCurrentRoomInfo(rid, (JSONObject) emp));
+                    System.out.println("Room Title: " + roomClass.getRoomTitle());
+                    System.out.println("Room Description: " + roomClass.getRoomDesc());
+                    System.out.println("Room Monster: " + roomClass.getRoomMons());
+                    System.out.println("Room Item: " + roomClass.getRoomItem());
+                    System.out.println("Room Puzzle: " + roomClass.getRoomPuzzle());
+
+
+                    if (roomClass.getRoomExit4() != null && roomClass.getRoomExit3() != null) {
+                        System.out.println("Available Exits: " + roomClass.getRoomExit1() + "," + roomClass.getRoomExit2()
+                                + ", " + roomClass.getRoomExit3() + ", " + roomClass.getRoomExit4());
+                    } else if (roomClass.getRoomExit1() != null && roomClass.getRoomExit2() != null
+                            && roomClass.getRoomExit3() != null) {
+                        System.out.println("Available Exits: " + roomClass.getRoomExit1() + ", " + roomClass.getRoomExit2()
+                                + ", " + roomClass.getRoomExit3());
+                    } else if (roomClass.getRoomExit1() != null && roomClass.getRoomExit2() != null) {
+                        System.out.println("Available Exit: " + roomClass.getRoomExit1() + ", " + roomClass.getRoomExit2()
+                                + ", " + roomClass.getRoomExit3());
+                    } else {
+                        System.out.println("Available Exits: " + roomClass.getRoomExit1());
+                    }
+                    System.out.println(" ");
+                    System.out.println("Type quit to End || Enter to Continue");
                 }
-                System.out.println(" ");
-                System.out.println("Type quit to End || Enter to Continue");
-                String input = sc.nextLine();
-                if (input.startsWith("quit")) break;
             }
 
         } catch (FileNotFoundException e) {
