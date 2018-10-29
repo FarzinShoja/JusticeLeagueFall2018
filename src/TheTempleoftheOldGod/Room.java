@@ -2,168 +2,130 @@ package TheTempleoftheOldGod;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class Room {
 
     private int RoomID;
-    private String roomTitile;
+    private String roomTitle;
     private String roomDesc;
     private String roomItem;
-    private int roomNorth;
-    private int roomSouth;
-    private int roomEast;
-    private int roomWest;
-
+    private String roomMons;
+    private String roomPuzzle;
+    private JSONArray roomExits;
+    private String roomExit1;
+    private String roomExit2;
+    private String roomExit3;
+    private String roomExit4;
 
     public Room() {
 
     }
 
-    public Room(int roomID, String roomTitile, String roomDesc, String roomItem, int roomNorth, int roomSouth, int roomEast, int roomWest) {
-        RoomID = roomID;
-        this.roomTitile = roomTitile;
-        this.roomDesc = roomDesc;
-        this.roomItem = roomItem;
-        this.roomNorth = roomNorth;
-        this.roomSouth = roomSouth;
-        this.roomEast = roomEast;
-        this.roomWest = roomWest;
+    public String getRoomMons() {
+        return roomMons;
+    }
+
+    public void setRoomMons(String roomMons) {
+        this.roomMons = roomMons;
     }
 
     public int getRoomID() {
         return RoomID;
     }
 
-    public String getRoomTitile() {
-        return roomTitile;
+    public void setRoomID(int roomID) {
+        RoomID = roomID;
+    }
+
+    public String getRoomTitle() {
+        return roomTitle;
+    }
+
+    public void setRoomTitle(String roomTitle) {
+        this.roomTitle = roomTitle;
     }
 
     public String getRoomDesc() {
         return roomDesc;
     }
 
-    public String getRoomItem() {
-        return roomItem;
-    }
-
-    public int getRoomNorth() {
-        return roomNorth;
-    }
-
-    public int getRoomSouth() {
-        return roomSouth;
-    }
-
-    public int getRoomEast() {
-        return roomEast;
-    }
-
-    public int getRoomWest() {
-        return roomWest;
-    }
-
-    public void setRoomID(int roomID) {
-        RoomID = roomID;
-    }
-
-    public void setRoomTitile(String roomTitile) {
-        this.roomTitile = roomTitile;
-    }
-
     public void setRoomDesc(String roomDesc) {
         this.roomDesc = roomDesc;
     }
 
-    public void setRoomItem(String roomItem) {
+    public String getRoomPuzzle() {
+        return roomPuzzle;
+    }
+
+    public void setRoomPuzzle(String roomPuzzle) {
+        this.roomPuzzle = roomPuzzle;
+    }
+
+    public JSONArray getRoomExits() {
+        return roomExits;
+    }
+
+    public void setRoomExits(JSONArray roomExits) {
+        this.roomExits = roomExits;
+    }
+
+    public String getRoomExit1() {
+        return roomExit1;
+    }
+
+    public void setRoomExit1(String roomExit1) {
+        this.roomExit1 = roomExit1;
+    }
+
+    public String getRoomExit2() {
+        return roomExit2;
+    }
+
+    public void setRoomExit2(String roomExit2) {
+        this.roomExit2 = roomExit2;
+    }
+
+    public String getRoomExit3() {
+        return roomExit3;
+    }
+
+    public void setRoomExit3(String roomExit3) {
+        this.roomExit3 = roomExit3;
+    }
+
+    public String getRoomExit4() {
+        return roomExit4;
+    }
+
+    public void setRoomExit4(String roomExit4) {
+        this.roomExit4 = roomExit4;
+    }
+
+    public String getRoomItem() {
+        return roomItem;
+    }
+
+    private void setRoomItem(String roomItem) {
         this.roomItem = roomItem;
     }
 
-    public void setRoomNorth(int roomNorth) {
-        this.roomNorth = roomNorth;
-    }
-
-    public void setRoomSouth(int roomSouth) {
-        this.roomSouth = roomSouth;
-    }
-
-    public void setRoomEast(int roomEast) {
-        this.roomEast = roomEast;
-    }
-
-    public void setRoomWest(int roomWest) {
-        this.roomWest = roomWest;
-    }
-
-    @Override
-    public String toString() {
-        return "Room{" +
-                "RoomID=" + RoomID +
-                ", roomTitile='" + roomTitile + '\'' +
-                ", roomDesc='" + roomDesc + '\'' +
-                ", roomItem='" + roomItem + '\'' +
-                ", roomNorth=" + roomNorth +
-                ", roomSouth=" + roomSouth +
-                ", roomEast=" + roomEast +
-                ", roomWest=" + roomWest +
-                '}';
-    }
-
-    @SuppressWarnings("unchecked")
-    public static void main(String[] args) {
-        //Create JsonParser Object
-        JSONParser jp = new JSONParser();
-        try (FileReader r = new FileReader("res/Rooms.json")) {
-
-            Object fileObject = jp.parse(r);
-
-            //Create Json Array
-            JSONArray roomList = (JSONArray) fileObject;
-
-            //This Prints out all of the rooms object
-            //System.out.println(roomList);
-
-            roomList.forEach(emp -> parseRoomObject((JSONObject) emp));
-            //System.out.println(roomList);
+    public void getCurrentRoomInfo(String roomT, JSONObject rooms) {
 
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+        JSONObject jo = (JSONObject) rooms.get("rooms");
+
+        //This Gives me the Room-ID from JSon File
+        if (roomT.equalsIgnoreCase(jo.get("roomTitle").toString())) {
+            setRoomTitle((String) jo.get("roomTitle"));
+            setRoomDesc((String) jo.get("roomDesc"));
+            setRoomMons((String) jo.get("roomMons"));
+            setRoomItem((String) jo.get("roomItem"));
+            setRoomPuzzle((String) jo.get("roomPuzzle"));
+            setRoomExit1((String) jo.get("roomExit1"));
+            setRoomExit2((String) jo.get("roomExit2"));
+            setRoomExit3((String) jo.get("roomExit3"));
+            setRoomExit4((String) jo.get("roomExit4"));
         }
+
     }
-
-    private static String parseRoomObject(JSONObject rooms) {
-
-        //System.out.println(rooms);
-        if (rooms.containsKey("rooms2")) {
-            //  System.out.println(rooms);
-            JSONObject er = (JSONObject) rooms.get("rooms2");    // <-------- Example to pick whatever you want from the json file
-            System.out.println("\n" + er.get("roomDesc"));
-        }
-        JSONObject er = (JSONObject) rooms.get("rooms1");
-
-
-//        String roomID = (String) er.get("roomID");
-// System.out.println("Room ID:"+ roomID);
-//        System.out.println("");
-//   String roomTitle = (String) er.get("roomTitle");
-  //      System.out.println("Room Title: " + roomTitle);
-//        System.out.println("");
-//        String roomDesc = (String) er.get("roomDesc");
-//        System.out.println("Room Description: " + roomDesc);
-//        System.out.println("");
-
-        return null;
-    }
-
-
 }
