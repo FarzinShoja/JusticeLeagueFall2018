@@ -557,11 +557,7 @@
       "roomDesc": "A long hallway stretches out before you, the only notable feature is the dead human body cast to one side, slowly being consumed by the floor.",
       "roomMons": "None",
       "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExit1": null,
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
+      "roomPuzzle": "None"
     }
   },
   {
@@ -571,11 +567,7 @@
       "roomDesc": " A million eyes watch you from a hundred thousand screens, a great Thing rears up before you, it numerable hands like needles and data ports, reach towards you and everything else, Its mouths open, a voice in you head and you ears and your eyes and your bones rings CHOOSE",
       "roomMons": "None",
       "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExit1": null,
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
+      "roomPuzzle": "None"
     }
   }
 ]
