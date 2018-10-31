@@ -18,9 +18,6 @@ public class Room {
     private String roomExit3;
     private String roomExit4;
 
-    public Room() {
-
-    }
 
     public String getRoomMons() {
         return roomMons;

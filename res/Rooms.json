@@ -1,581 +1,387 @@
 [
   {
-    "rooms": {
-      "roomID": "00",
-      "roomTitle": "Outside",
-      "roomDesc": "The structure before you rises out of the dead ice like some scab upon the universe. It is a strange thing, all twisted metal, oddly curved stone and chilling blue light. Even with all of the horrible things you have seen throughout your career it inspires a strange trepidation in you. [Rubble covers the only visible entrance…] [The entrance stands before you] ",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Hall1"
-      ],
-      "roomExit1": "Hall 1",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "00",
+    "roomTitle": "Outside",
+    "roomDesc": "The structure before you rises out of the dead ice like some scab upon the universe. It is a strange thing, all twisted metal, oddly curved stone and chilling blue light. Even with all of the horrible things you have seen throughout your career it inspires a strange trepidation in you. [Rubble covers the only visible entrance…] [The entrance stands before you] ",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "01",
-      "roomTitle": "Hall1",
-      "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Hall 2"
-      ],
-      "roomExit1": "Hall2",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "01",
+    "roomTitle": "Hall1",
+    "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall 2"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "02",
-      "roomTitle": "Hall2",
-      "roomDesc": "Now you can clearly see the Statue. It looms down from the ceiling, and you can feel it watch you. [The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you.] [Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.]",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Final Room"
-      ],
-      "roomExit1": "Final Room",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "02",
+    "roomTitle": "Hall2",
+    "roomDesc": "Now you can clearly see the Statue. It looms down from the ceiling, and you can feel it watch you. [The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you.] [Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.]",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Final Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "03",
-      "roomTitle": "PuzzleRoom1",
-      "roomDesc": "The room before you open in a vast cavernous space, strange wet material drips down from the ceiling.In the center of the room, what appears to be a console blinks in front of you",
-      "roomMons": "None",
-      "roomItem": "IT10",
-      "roomExits": [
-        "ChosenSpiderRoom, ChosenGiantRoom, Hall3, GrandHall2"
-      ],
-      "roomExit1": "Chosen Spider Room",
-      "roomExit2": "Chosen Giant Room",
-      "roomExit3": "Hall 3",
-      "roomExit4": "Grand Hall 2"
-    }
+    "roomID": "03",
+    "roomTitle": "PuzzleRoom1",
+    "roomDesc": "The room before you open in a vast cavernous space, strange wet material drips down from the ceiling.In the center of the room, what appears to be a console blinks in front of you",
+    "roomMons": "None",
+    "roomItem": "IT10",
+    "exitRooms": [
+      "ChosenSpiderRoom, ChosenGiantRoom, Hall3, GrandHall2"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "04",
-      "roomTitle": "PuzzleRoom2",
-      "roomDesc": "This room is dark and cramped, several bodies lie scattered across the ground horrifically maimed and deformed. One of the corpses seems to have grown over a strange weapon.",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "ItemRoom1, ShadowRoom1,ChosenRoom"
-      ],
-      "roomExit1": "Item Room 1",
-      "roomExit2": "Shadow Room 1",
-      "roomExit3": "Chosen Room",
-      "roomExit4": null
-    }
+    "roomID": "04",
+    "roomTitle": "PuzzleRoom2",
+    "roomDesc": "This room is dark and cramped, several bodies lie scattered across the ground horrifically maimed and deformed. One of the corpses seems to have grown over a strange weapon.",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "ItemRoom1, ShadowRoom1,ChosenRoom"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "05",
-      "roomTitle": "PuzzleRoom3",
-      "roomDesc": "This room is strangely opulent, the usual dull surfaces of the strange metal shine and gleam in the room brilliant lighting.A strange metal box stand alone in the center.",
-      "roomMons": "None",
-      "roomItem": "IT12",
-      "roomPuzzle": "",
-      "roomExits": [
-        "Puzzle Room 6"
-      ],
-      "roomExit1": "Puzzle Room 1",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "05",
+    "roomTitle": "PuzzleRoom3",
+    "roomDesc": "This room is strangely opulent, the usual dull surfaces of the strange metal shine and gleam in the room brilliant lighting.A strange metal box stand alone in the center.",
+    "roomMons": "None",
+    "roomItem": "IT12",
+    "roomPuzzle": "",
+    "exitRooms": [
+      "Puzzle Room 6"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "06",
-      "roomTitle": "PuzzleRoom4",
-      "roomDesc": "This area seems worshipful, with an altar like the one in the Grand Hall sitting before what seems to be a computer.",
-      "roomMons": "None",
-      "roomItem": "Chosen Language Comprehension ",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Puzzle Room 6"
-      ],
-      "roomExit1": "Puzzle Room 6",
-      "roomExit2": "Chosen Giant Room",
-      "roomExit3": "Hall 3",
-      "roomExit4": "Grand Hall 2"
-    }
+    "roomID": "06",
+    "roomTitle": "PuzzleRoom4",
+    "roomDesc": "This area seems worshipful, with an altar like the one in the Grand Hall sitting before what seems to be a computer.",
+    "roomMons": "None",
+    "roomItem": "Chosen Language Comprehension ",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Puzzle Room 6"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "07",
-      "roomTitle": "ChosenSpiderRoom",
-      "roomDesc": "As soon as you enter you notice a webbing like substance all over the room. Closer examination reveals it to be some kind of cybernetic string. The string glow a dull orange, giving the room a deeply unsettling cast.You hear scuttling noises above you.",
-      "roomMons": "Chosen Spider",
-      "roomItem": "IT11",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Tunnel1, ShadowRoom1, PuzzleRoom1"
-      ],
-      "roomExit1": "Tunnel 1",
-      "roomExit2": "Shadow Room 1",
-      "roomExit3": "Puzzle Room 1",
-      "roomExit4": null
-    }
+    "roomID": "07",
+    "roomTitle": "ChosenSpiderRoom",
+    "roomDesc": "As soon as you enter you notice a webbing like substance all over the room. Closer examination reveals it to be some kind of cybernetic string. The string glow a dull orange, giving the room a deeply unsettling cast.You hear scuttling noises above you.",
+    "roomMons": "Chosen Spider",
+    "roomItem": "IT11",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Tunnel1, ShadowRoom1, PuzzleRoom1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "08",
-      "roomTitle": "Tunnel1",
-      "roomDesc": "As you emerge from the tunnel, you wince at an astonishing bright light dazzles your eye. As the room comes back into focus, you see a strange container like both stone and metal. Within it you see a vibrant blue gel.",
-      "roomMons": "None",
-      "roomItem": "IT3",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "ChosenSpiderRoom"
-      ],
-      "roomExit1": "Chosen Spider Room",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "08",
+    "roomTitle": "Tunnel1",
+    "roomDesc": "As you emerge from the tunnel, you wince at an astonishing bright light dazzles your eye. As the room comes back into focus, you see a strange container like both stone and metal. Within it you see a vibrant blue gel.",
+    "roomMons": "None",
+    "roomItem": "IT3",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "ChosenSpiderRoom"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "09",
-      "roomTitle": "ShadowRoom1",
-      "roomDesc": "This room has a twisted aura to it. In the corners of your eyes, the walls seem ooze as if alive. You try to ignore the gnawing sensation of damned souls trying to desperately get away.Sitting on a pedestal in the center of the room is a vial contain a dark red liquid.",
-      "roomMons": "None",
-      "roomItem": "IT5",
-      "roomExits": [
-        "PuzzleRoom4, ChosenSpiderRoom"
-      ],
-      "roomExit1": "Puzzle Room 4",
-      "roomExit2": "Chosen Spider Room",
-      "roomExit3": "Puzzle Room 1",
-      "roomExit4": null
-    }
+    "roomID": "09",
+    "roomTitle": "ShadowRoom1",
+    "roomDesc": "This room has a twisted aura to it. In the corners of your eyes, the walls seem ooze as if alive. You try to ignore the gnawing sensation of damned souls trying to desperately get away.Sitting on a pedestal in the center of the room is a vial contain a dark red liquid.",
+    "roomMons": "None",
+    "roomItem": "IT5",
+    "exitRooms": [
+      "PuzzleRoom4, ChosenSpiderRoom"
+    ],
+    "roomExit1": "Puzzle Room 4",
+    "roomExit2": "Chosen Spider Room",
+    "roomExit3": "Puzzle Room 1",
+    "roomExit4": null
   },
   {
-    "rooms": {
-      "roomID": "10",
-      "roomTitle": "ItemsRoom1",
-      "roomDesc": "This room is clogged with the fungal organ-ism you saw in the room below. An usually dense cluster of them stands on the far wall. ",
-      "roomMons": "None",
-      "roomItem": "IT1",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Puzzle Room 4"
-      ],
-      "roomExit1": "Puzzle Room 4",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "10",
+    "roomTitle": "ItemsRoom1",
+    "roomDesc": "This room is clogged with the fungal organ-ism you saw in the room below. An usually dense cluster of them stands on the far wall. ",
+    "roomMons": "None",
+    "roomItem": "IT1",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Puzzle Room 4"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "11",
-      "roomTitle": "ChosenFungusRoom",
-      "roomDesc": "Every inch of this room is covered is fungal growths. Close examination reveals that lining their structure are biochemical augmentations, light-ing the room a sickly yellow color.In the corner of your eye you see a dense cluster of growth begin to writhe and move.",
-      "roomMons": "ChosenFungus",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Puzzle Room 4",
-        "Shadow Room 2"
-      ],
-      "roomExit1": "Puzzle Room 4",
-      "roomExit2": "Shadow Room 2",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "11",
+    "roomTitle": "ChosenFungusRoom",
+    "roomDesc": "Every inch of this room is covered is fungal growths. Close examination reveals that lining their structure are biochemical augmentations, light-ing the room a sickly yellow color.In the corner of your eye you see a dense cluster of growth begin to writhe and move.",
+    "roomMons": "ChosenFungus",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Puzzle Room 4",
+      "Shadow Room 2"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "12",
-      "roomTitle": "ShadowRoom2",
-      "roomDesc": "As you enter the room there is a strange statue in the center of the roomDripping a red sub-stance, you hear the walls telling you to get closer",
-      "roomMons": "None",
-      "roomItem": "IT5",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Fungus Room",
-        "Key Room 1"
-      ],
-      "roomExit1": "Chosen Fungus Room",
-      "roomExit2": "Key Room 1",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "12",
+    "roomTitle": "ShadowRoom2",
+    "roomDesc": "As you enter the room there is a strange statue in the center of the roomDripping a red sub-stance, you hear the walls telling you to get closer",
+    "roomMons": "None",
+    "roomItem": "IT5",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Fungus Room",
+      "Key Room 1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "13",
-      "roomTitle": "KeyRoom1",
-      "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.[Hanging suspended in front of you is what appears to be a piece of a small object, similar in shape to the craving you saw in the Cathedral.]",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Snake Room",
-        "Shadow Room 2",
-        "Puzzle Room1"
-      ],
-      "roomExit1": "Chosen Snake Room",
-      "roomExit2": "Shadow Room 2",
-      "roomExit3": "Puzzle Room1",
-      "roomExit4": null
-    }
+    "roomID": "13",
+    "roomTitle": "KeyRoom1",
+    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.[Hanging suspended in front of you is what appears to be a piece of a small object, similar in shape to the craving you saw in the Cathedral.]",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Snake Room",
+      "Shadow Room 2",
+      "Puzzle Room1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "14",
-      "roomTitle": "Hall3",
-      "roomDesc": "A dark passageway with three distant openings branching off in each direction  ",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Slime Room",
-        "Item Room 3",
-        "Shadow Room 3",
-        "Puzzle Room 1"
-      ],
-      "roomExit1": "Chosen Slime Room",
-      "roomExit2": "Item Room 3",
-      "roomExit3": "Shadow Room 3",
-      "roomExit4": "Puzzle Room 1"
-    }
+    "roomID": "14",
+    "roomTitle": "Hall3",
+    "roomDesc": "A dark passageway with three distant openings branching off in each direction  ",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Slime Room",
+      "Item Room 3",
+      "Shadow Room 3",
+      "Puzzle Room 1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "15",
-      "roomTitle": "ChosenSlimeRoom",
-      "roomDesc": "This room is disgusting. Thick strands of a fleshy slime crisscross the room around your, pulsing with a vomits green light. Little streams of blood flow down the biochemical walls and the broken bones of uncountable victims litter the floor. ",
-      "roomMons": "ChosenSlime",
-      "roomItem": "IT1",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Hall 3",
-        "Item Room 4"
-      ],
-      "roomExit1": "Hall 3",
-      "roomExit2": "Item Room 4",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "15",
+    "roomTitle": "ChosenSlimeRoom",
+    "roomDesc": "This room is disgusting. Thick strands of a fleshy slime crisscross the room around your, pulsing with a vomits green light. Little streams of blood flow down the biochemical walls and the broken bones of uncountable victims litter the floor. ",
+    "roomMons": "ChosenSlime",
+    "roomItem": "IT1",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall 3",
+      "Item Room 4"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "16",
-      "roomTitle": "ItemRoom3",
-      "roomDesc": "This rooms walls beat and shudder with machinery and glowing tubes filled with a blue liquid. All funnel into a strange machine in the center of the room.[Within the machine is a glow glowing canister]",
-      "roomMons": "None",
-      "roomItem": "IT3",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Hall3 ",
-        "ChosenTreeRoom"
-      ],
-      "roomExit1": "Hall 3",
-      "roomExit2": "Chosen Tree Room",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "16",
+    "roomTitle": "ItemRoom3",
+    "roomDesc": "This rooms walls beat and shudder with machinery and glowing tubes filled with a blue liquid. All funnel into a strange machine in the center of the room.[Within the machine is a glow glowing canister]",
+    "roomMons": "None",
+    "roomItem": "IT3",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall3 ",
+      "ChosenTreeRoom"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "17",
-      "roomTitle": "ItemRoom4",
-      "roomDesc": "The small room that contains only a decayed corpse of something that appears disturbingly human, it holds a shimmering capsule in its hands.",
-      "roomMons": "None",
-      "roomItem": "Elixir",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Slime Room"
-      ],
-      "roomExit1": "Chosen Slime Room",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "17",
+    "roomTitle": "ItemRoom4",
+    "roomDesc": "The small room that contains only a decayed corpse of something that appears disturbingly human, it holds a shimmering capsule in its hands.",
+    "roomMons": "None",
+    "roomItem": "Elixir",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Slime Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "18",
-      "roomTitle": "ShadowRoom3",
-      "roomDesc": "As you enter the room you are overwhelmed with the aura of pure depression. The walls are lined with the agonized expressions of hundreds of unrecognizable species.  ",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Hall3",
-        "Chosen Tree Room"
-      ],
-      "roomExit1": "Chosen Slime Room",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "18",
+    "roomTitle": "ShadowRoom3",
+    "roomDesc": "As you enter the room you are overwhelmed with the aura of pure depression. The walls are lined with the agonized expressions of hundreds of unrecognizable species.  ",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall3",
+      "Chosen Tree Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "19",
-      "roomTitle": "ChosenTreeRoom",
-      "roomDesc": "This room is cavernous, the wall stretching up above you into a dome, grafts of skin cover them, tinting the light a hellish red. Before you lies a truly staggering number of corpses and stray limbs heaped into a gigantic pile. ",
-      "roomMons": "ChosenTree",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Shadow Room 3",
-        "Item Room 3",
-        "Chosen Death Room"
-      ],
-      "roomExit1": "Shadow Room 3",
-      "roomExit2": "Item Room 3",
-      "roomExit3": "Chosen DeathRoom",
-      "roomExit4": null
-    }
+    "roomID": "19",
+    "roomTitle": "ChosenTreeRoom",
+    "roomDesc": "This room is cavernous, the wall stretching up above you into a dome, grafts of skin cover them, tinting the light a hellish red. Before you lies a truly staggering number of corpses and stray limbs heaped into a gigantic pile. ",
+    "roomMons": "ChosenTree",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Shadow Room 3",
+      "Item Room 3",
+      "Chosen Death Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "20",
-      "roomTitle": "ChosenEggRoom",
-      "roomDesc": "This room is pitch-black room, unnaturally so. It’s as if an endless void stretches out from beyond the threshold. In the distance you see a white shape, almost like an egg, glowing with a strange purple light. You feel as if it watches you.",
-      "roomMons": "ChosenEgg",
-      "roomItem": "IT3",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Item Room 5",
-        "Chosen Death Room"
-      ],
-      "roomExit1": "Item Room 5",
-      "roomExit2": "Chosen Death Room",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "20",
+    "roomTitle": "ChosenEggRoom",
+    "roomDesc": "This room is pitch-black room, unnaturally so. It’s as if an endless void stretches out from beyond the threshold. In the distance you see a white shape, almost like an egg, glowing with a strange purple light. You feel as if it watches you.",
+    "roomMons": "ChosenEgg",
+    "roomItem": "IT3",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Item Room 5",
+      "Chosen Death Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "21",
-      "roomTitle": "ChosenDeathRoom",
-      "roomDesc": "This room is starkly lit by brilliantly white floor. This room lacks the temple’s typical shudder and beat, this feels dead. In the center of the room dangling a long-rotted corpse filled with machines hangs from a tangle of wires, tubes and pumps. It seems familiar[, it’s the one you saw it in the Cathedral].",
-      "roomMons": "ChosenDeath",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Shadow Room 5",
-        "Chosen Egg Room",
-        "Chosen Tree Room",
-        "Key Room 2"
-      ],
-      "roomExit1": "Shadow Room 5",
-      "roomExit2": "Chosen Egg Room",
-      "roomExit3": "Chosen Tree Room",
-      "roomExit4": "Key Room 2"
-    }
+    "roomID": "21",
+    "roomTitle": "ChosenDeathRoom",
+    "roomDesc": "This room is starkly lit by brilliantly white floor. This room lacks the temple’s typical shudder and beat, this feels dead. In the center of the room dangling a long-rotted corpse filled with machines hangs from a tangle of wires, tubes and pumps. It seems familiar[, it’s the one you saw it in the Cathedral].",
+    "roomMons": "ChosenDeath",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Shadow Room 5",
+      "Chosen Egg Room",
+      "Chosen Tree Room",
+      "Key Room 2"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "22",
-      "roomTitle": "ItemRoom5",
-      "roomDesc": "There are corpses covering the floors and walls. They appear as if they were killing each other for something in the end of the room. You see a statue holding a red capsule",
-      "roomMons": "None",
-      "roomItem": "IT1",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Egg Room",
-        "Shadow Room 5"
-      ],
-      "roomExit1": "Chosen Egg Room",
-      "roomExit2": "Shadow Room 5",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "22",
+    "roomTitle": "ItemRoom5",
+    "roomDesc": "There are corpses covering the floors and walls. They appear as if they were killing each other for something in the end of the room. You see a statue holding a red capsule",
+    "roomMons": "None",
+    "roomItem": "IT1",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Egg Room",
+      "Shadow Room 5"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "23",
-      "roomTitle": "ShadowRoom5",
-      "roomDesc": "The only notable thing in this room is a mural, as you watch, it seems to move, shifting and twisting and reformatting itself continuously. ",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Death Room",
-        "Item Room 5"
-      ],
-      "roomExit1": "Chosen Death Room",
-      "roomExit2": "Item Room 5",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "23",
+    "roomTitle": "ShadowRoom5",
+    "roomDesc": "The only notable thing in this room is a mural, as you watch, it seems to move, shifting and twisting and reformatting itself continuously. ",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Death Room",
+      "Item Room 5"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "24",
-      "roomTitle": "KeyRoom2",
-      "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.",
-      "roomMons": "None",
-      "roomItem": "IT6",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Shadow Room 5",
-        "Cyber Death Room",
-        "Puzzle Room 1"
-      ],
-      "roomExit1": "Shadow Room 5",
-      "roomExit2": "Cyber Death Room",
-      "roomExit3": "Puzzle Room 1",
-      "roomExit4": null
-    }
+    "roomID": "24",
+    "roomTitle": "KeyRoom2",
+    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.",
+    "roomMons": "None",
+    "roomItem": "IT6",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Shadow Room 5",
+      "Cyber Death Room",
+      "Puzzle Room 1"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "25",
-      "roomTitle": "ShadowRoom6",
-      "roomDesc": "This room is massive, around as large as the central chamber. Doors lead in every direction, but two catch you eye. They stand opposite the room of each other, large and imposing. Standing in the center of the room are 8 monolithic statues, who you recognize as the monsters who have fought on your journey through out the temple.",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Puzzle Room 3",
-        "Puzzle Room 4",
-        "Chosen Snake Room"
-      ],
-      "roomExit1": "Puzzle Room 3",
-      "roomExit2": "Puzzle Room 4",
-      "roomExit3": "Chosen Snake Room",
-      "roomExit4": null
-    }
+    "roomID": "25",
+    "roomTitle": "ShadowRoom6",
+    "roomDesc": "This room is massive, around as large as the central chamber. Doors lead in every direction, but two catch you eye. They stand opposite the room of each other, large and imposing. Standing in the center of the room are 8 monolithic statues, who you recognize as the monsters who have fought on your journey through out the temple.",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Puzzle Room 3",
+      "Puzzle Room 4",
+      "Chosen Snake Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "26",
-      "roomTitle": "ChosenSnakeRoom",
-      "roomDesc": "The room almost reminds you of a torture chamber. Strange implements, and horrific machinery cover the walls, and in the center lies mound of distorted flesh.",
-      "roomMons": "ChosenSnake",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Key Room",
-        "Shadow Room 5"
-      ],
-      "roomExit1": "Key Room",
-      "roomExit2": "Shadow Room 5",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "26",
+    "roomTitle": "ChosenSnakeRoom",
+    "roomDesc": "The room almost reminds you of a torture chamber. Strange implements, and horrific machinery cover the walls, and in the center lies mound of distorted flesh.",
+    "roomMons": "ChosenSnake",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Key Room",
+      "Shadow Room 5"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "27",
-      "roomTitle": "KeyRoom3",
-      "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.",
-      "roomMons": "None",
-      "roomItem": "IT6",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Shadow Room 5"
-      ],
-      "roomExit1": "Shadow Room 5",
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "27",
+    "roomTitle": "KeyRoom3",
+    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.",
+    "roomMons": "None",
+    "roomItem": "IT6",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Shadow Room 5"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "28",
-      "roomTitle": "ChosenGiantRoom",
-      "roomDesc": "This room is a hallway, that stretches enormously ahead of you, but what catches your attention is the enormous being chained in its center. It easily towers 3 stories in height. Each of the several chains is as thick as a star fighter and bind its arm to the ceiling. With what sounds disturbingly like a chuckle, it nods its head towards the door nearest to you. (IF the player has Chosen Language Comprehension)[You’ll need what’s in there]",
-      "roomMons": "ChosenGiant",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Item Room ",
-        "Shadow Room "
-      ],
-      "roomExit1": "Item Room ",
-      "roomExit2": "Shadow Room ",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "28",
+    "roomTitle": "ChosenGiantRoom",
+    "roomDesc": "This room is a hallway, that stretches enormously ahead of you, but what catches your attention is the enormous being chained in its center. It easily towers 3 stories in height. Each of the several chains is as thick as a star fighter and bind its arm to the ceiling. With what sounds disturbingly like a chuckle, it nods its head towards the door nearest to you. (IF the player has Chosen Language Comprehension)[You’ll need what’s in there]",
+    "roomMons": "ChosenGiant",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Item Room ",
+      "Shadow Room "
+    ]
   },
   {
-    "rooms": {
-      "roomID": "29",
-      "roomTitle": "ItemRoom6",
-      "roomDesc": "This room is relatively simple and without ornamentation. In the center stands a pedestal containing a red capsule.",
-      "roomMons": "None",
-      "roomItem": "IT1",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Chosen Giant Room",
-        "Shadow Room 6"
-      ],
-      "roomExit1": "Chosen Giant Room",
-      "roomExit2": "Shadow Room 6",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "29",
+    "roomTitle": "ItemRoom6",
+    "roomDesc": "This room is relatively simple and without ornamentation. In the center stands a pedestal containing a red capsule.",
+    "roomMons": "None",
+    "roomItem": "IT1",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Chosen Giant Room",
+      "Shadow Room 6"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "30",
-      "roomTitle": "ShadowRoom7",
-      "roomDesc": "This room is covered wall to wall with screens, holograms, and text depicting the giant chained outside leading a horde of abominations against a race of beings similar in shape to it. Others show various other Chosen committing similar atrocities.",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExits": [
-        "Item Room",
-        "Chosen Giant Room"
-      ],
-      "roomExit1": "Item Room",
-      "roomExit2": "Chosen Giant Room",
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "30",
+    "roomTitle": "ShadowRoom7",
+    "roomDesc": "This room is covered wall to wall with screens, holograms, and text depicting the giant chained outside leading a horde of abominations against a race of beings similar in shape to it. Others show various other Chosen committing similar atrocities.",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Item Room",
+      "Chosen Giant Room"
+    ]
   },
   {
-    "rooms": {
-      "roomID": "31",
-      "roomTitle": "FinalHall",
-      "roomDesc": "A long hallway stretches out before you, the only notable feature is the dead human body cast to one side, slowly being consumed by the floor.",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExit1": null,
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "31",
+    "roomTitle": "FinalHall",
+    "roomDesc": "A long hallway stretches out before you, the only notable feature is the dead human body cast to one side, slowly being consumed by the floor.",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None"
   },
   {
-    "rooms": {
-      "roomID": "32",
-      "roomTitle": "OldGodRoom",
-      "roomDesc": " A million eyes watch you from a hundred thousand screens, a great Thing rears up before you, it numerable hands like needles and data ports, reach towards you and everything else, Its mouths open, a voice in you head and you ears and your eyes and your bones rings CHOOSE",
-      "roomMons": "None",
-      "roomItem": "None",
-      "roomPuzzle": "None",
-      "roomExit1": null,
-      "roomExit2": null,
-      "roomExit3": null,
-      "roomExit4": null
-    }
+    "roomID": "32",
+    "roomTitle": "OldGodRoom",
+    "roomDesc": " A million eyes watch you from a hundred thousand screens, a great Thing rears up before you, it numerable hands like needles and data ports, reach towards you and everything else, Its mouths open, a voice in you head and you ears and your eyes and your bones rings CHOOSE",
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None"
   }
 ]
