@@ -1,144 +1,182 @@
 package TheTempleoftheOldGod;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Room {
 
     private int RoomID;
-    private String allRoomTitles;
     private String roomTitle;
     private String roomDesc;
+    private String[] interactions;
     private String roomItem;
     private String roomMons;
     private String roomPuzzle;
-    private JSONArray roomExits;
-    private String roomExit1;
-    private String roomExit2;
-    private String roomExit3;
-    private String roomExit4;
+    private String[] exitRooms;
+
+    public Map<String, String> interactionMap = new HashMap<String, String>();
 
 
-    public String getRoomMons() {
-        return roomMons;
-    }
+    public Room() {
 
-    public void setRoomMons(String roomMons) {
-        this.roomMons = roomMons;
     }
 
     public int getRoomID() {
+
         return RoomID;
     }
 
     public void setRoomID(int roomID) {
+
         RoomID = roomID;
     }
 
-    public String getAllRoomTitles() {
-        return allRoomTitles;
+    public String[] getInteractions() {
+        return interactions;
     }
 
-    public void setAllRoomTitles(String allRoomTitles) {
-        this.allRoomTitles = allRoomTitles;
+    public void setInteractions(String[] interactions) {
+        this.interactions = interactions;
     }
 
     public String getRoomTitle() {
+
         return roomTitle;
     }
 
     public void setRoomTitle(String roomTitle) {
+
         this.roomTitle = roomTitle;
     }
 
     public String getRoomDesc() {
+
         return roomDesc;
     }
 
     public void setRoomDesc(String roomDesc) {
+
         this.roomDesc = roomDesc;
     }
 
+    public String getRoomItem() {
+
+        return roomItem;
+    }
+
+    public void setRoomItem(String roomItem) {
+
+        this.roomItem = roomItem;
+    }
+
+    public String getRoomMons() {
+
+        return roomMons;
+    }
+
+    public void setRoomMons(String roomMons) {
+
+        this.roomMons = roomMons;
+    }
+
     public String getRoomPuzzle() {
+
         return roomPuzzle;
     }
 
     public void setRoomPuzzle(String roomPuzzle) {
+
         this.roomPuzzle = roomPuzzle;
     }
 
-    public JSONArray getRoomExits() {
-        return roomExits;
+    public String[] getExitRooms() {
+
+        return exitRooms;
     }
 
-    public void setRoomExits(JSONArray roomExits) {
-        this.roomExits = roomExits;
+    public void setExitRooms(String[] exitRooms) {
+
+        this.exitRooms = exitRooms;
     }
 
-    public String getRoomExit1() {
-        return roomExit1;
+    @Override
+    public String toString() {
+        return "Room{" +
+                "RoomID=" + RoomID +
+                ", roomTitle='" + roomTitle + '\'' +
+                ", roomDesc='" + roomDesc + '\'' +
+                ", interactions=" + Arrays.toString(interactions) +
+                ", roomItem='" + roomItem + '\'' +
+                ", roomMons='" + roomMons + '\'' +
+                ", roomPuzzle='" + roomPuzzle + '\'' +
+                ", exitRooms=" + Arrays.toString(exitRooms) +
+                '}';
     }
 
-    public void setRoomExit1(String roomExit1) {
-        this.roomExit1 = roomExit1;
+    public ArrayList extractAllRoomTitles(Room[] rooms) {
+        ArrayList titleList = new ArrayList();
+        for (int i = 0; i < rooms.length; i++) {
+            titleList.add(rooms[i].getRoomTitle());
+        }
+        return titleList;
     }
 
-    public String getRoomExit2() {
-        return roomExit2;
+    public ArrayList extractExitRooms(String currentRoomTitle, Room[] rooms) {
+        ArrayList exitList = new ArrayList();
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                exitList.add(Arrays.toString(rooms[i].getExitRooms()));
+            }
+        }
+        return exitList;
     }
 
-    public void setRoomExit2(String roomExit2) {
-        this.roomExit2 = roomExit2;
+    public String extractRoomDesc(String currentRoomTitle, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                s = rooms[i].getRoomDesc();
+            }
+        }
+        return s;
     }
 
-    public String getRoomExit3() {
-        return roomExit3;
+    public boolean checkRoom(String currentRoomTitle, Room[] rooms) {
+        boolean b = false;
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                b = true;
+                break;
+            } else {
+                b = false;
+            }
+        }
+        return b;
     }
 
-    public void setRoomExit3(String roomExit3) {
-        this.roomExit3 = roomExit3;
-    }
-
-    public String getRoomExit4() {
-        return roomExit4;
-    }
-
-    public void setRoomExit4(String roomExit4) {
-        this.roomExit4 = roomExit4;
-    }
-
-    public String getRoomItem() {
-        return roomItem;
-    }
-
-    private void setRoomItem(String roomItem) {
-        this.roomItem = roomItem;
-    }
-
-    public void getCurrentRoomInfo(String roomT, JSONObject rooms) {
-
-
-        JSONObject jo = (JSONObject) rooms.get("rooms");
-
-        //This Gives me the Room-ID from JSon File
-
-        if (roomT.equalsIgnoreCase(jo.get("roomTitle").toString())) {
-            setRoomTitle((String) jo.get("roomTitle"));
-            setRoomDesc((String) jo.get("roomDesc"));
-            setRoomMons((String) jo.get("roomMons"));
-            setRoomItem((String) jo.get("roomItem"));
-            setRoomPuzzle((String) jo.get("roomPuzzle"));
-            setRoomExit1((String) jo.get("roomExit1"));
-            setRoomExit2((String) jo.get("roomExit2"));
-            setRoomExit3((String) jo.get("roomExit3"));
-            setRoomExit4((String) jo.get("roomExit4"));
+    public void extractRoomInter(String currentRoomTitle, Room[] rooms) {
+        ArrayList<String> roomIner = new ArrayList();
+        interactionMap.clear();
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                //ENHANCED FOR LOOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BELOW
+                // for(String s: rooms[i].getInteractions()){
+                // }
+                for (int x = 0; x < rooms[i].getInteractions().length; x++) {
+                    String s = rooms[i].getInteractions()[x];
+                    roomIner.add(s);
+                }
+            }
+        }
+        for (String s : roomIner) {
+            String[] holder = s.split("#");
+            interactionMap.put(holder[0], holder[1]);
         }
     }
 
-    public void allRoomTitle(JSONObject rooms) {
 
-        JSONObject jo = (JSONObject) rooms.get("rooms");
-        System.out.println("The Room Title-> " + jo.get("roomTitle"));
-    }
 }
+
 

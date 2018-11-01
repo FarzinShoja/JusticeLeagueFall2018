@@ -1,0 +1,36 @@
+[
+  {
+    "roomID": "00",
+    "roomTitle": "Outside",
+    "roomDesc": "The structure before you rises out of the dead ice like some scab upon the universe. It is a strange thing, all twisted metal, oddly curved stone and chilling blue light. Even with all of the horrible things you have seen throughout your career it inspires a strange trepidation in you. [Rubble covers the only visible entrance…] [The entrance stands before you] ",
+    "interactions": [
+      "Look around the Structure#A quick jog around the structure reveals no other en-trance besides the one that has caved in",
+      "Check Rubble#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
+      "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strange-ly eager to do so. The Ships missile systems are locked and loaded."
+    ],
+    "roomMons": "None",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall1",
+      "Test 1",
+      "Test2"
+    ]
+  },
+  {
+    "roomID": "01",
+    "roomTitle": "Hall122",
+    "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
+    "interactions": [
+      "hello # A quick jog around the structure reveals no other en-trance besides the one that has caved in",
+      "bye # The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
+      "goodbye # Your ship is still mostly functional, you could leave at any time, and you feel strange-ly eager to do so. The Ships missile systems are locked and loaded."
+    ],
+    "roomMons": "Yollo",
+    "roomItem": "None",
+    "roomPuzzle": "None",
+    "exitRooms": [
+      "Hall 2"
+    ]
+  }
+]
