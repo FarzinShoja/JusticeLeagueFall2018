@@ -1,11 +1,9 @@
 package TheTempleoftheOldGod;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
@@ -21,7 +19,14 @@ public class Item {
     private String itemInfectionAmount;
     private String itemAmmo;
 
+    public Item[] items;
+
     public Item() {
+        try {
+            readItemJson();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public int getItemID() {
@@ -205,6 +210,12 @@ public class Item {
 
         }
         return s;
+    }
+
+    public void readItemJson() throws Exception {
+        String str1 = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
+        ObjectMapper om1 = new ObjectMapper();
+        items = om1.readValue(str1, Item[].class);
     }
 
     public static void main(String[] args) {
