@@ -19,14 +19,23 @@ public class Item {
     private String itemInfectionAmount;
     private String itemAmmo;
 
-    public Item[] items;
+    public static class ReadItemJson {
+        public Item[] items;
 
-    public Item() {
-        try {
-            readItemJson();
-        } catch (Exception e) {
-            e.printStackTrace();
+        public void readItemJson() throws Exception {
+            String str1 = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
+            ObjectMapper om1 = new ObjectMapper();
+            items = om1.readValue(str1, Item[].class);
         }
+
+        public ReadItemJson() {
+            try {
+                readItemJson();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     public int getItemID() {
@@ -212,14 +221,8 @@ public class Item {
         return s;
     }
 
-    public void readItemJson() throws Exception {
-        String str1 = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
-        ObjectMapper om1 = new ObjectMapper();
-        items = om1.readValue(str1, Item[].class);
-    }
-
     public static void main(String[] args) {
-        ReadJSonExample read = new ReadJSonExample();
+        ReadItemJson read = new ReadItemJson();
         Item r = new Item();
         Item[] itemsHolder = read.items;
 
