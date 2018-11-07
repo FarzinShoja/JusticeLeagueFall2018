@@ -1,15 +1,16 @@
 package TheTempleoftheOldGod;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
+
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Item {
-
-    private int ItemID;
-    private String allItemTitles;
+    private int itemID;
     private String itemTitle;
     private String itemDesc;
     private String itemType;
@@ -21,31 +22,14 @@ public class Item {
     private String itemAmmo;
 
     public Item() {
-
-    }
-
-    public String getItemType() {
-        return itemType;
-    }
-
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
     }
 
     public int getItemID() {
-        return ItemID;
+        return itemID;
     }
 
     public void setItemID(int itemID) {
-        ItemID = itemID;
-    }
-
-    public String getAllItemTitles() {
-        return allItemTitles;
-    }
-
-    public void setAllItemTitles(String allItemTitles) {
-        this.allItemTitles = allItemTitles;
+        this.itemID = itemID;
     }
 
     public String getItemTitle() {
@@ -62,6 +46,14 @@ public class Item {
 
     public void setItemDesc(String itemDesc) {
         this.itemDesc = itemDesc;
+    }
+
+    public String getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(String itemType) {
+        this.itemType = itemType;
     }
 
     public String getItemEquipable() {
@@ -108,23 +100,119 @@ public class Item {
         return itemAmmo;
     }
 
-    private void setItemAmmo(String itemAmmo) {
+    public void setItemAmmo(String itemAmmo) {
         this.itemAmmo = itemAmmo;
     }
 
-    public void readItemJson() throws Exception{
-        String str  = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
-        ObjectMapper oM1 = new ObjectMapper();
-        Item[] items = oM1.readValue(str,Item[].class);
+    @Override
+    public String toString() {
+        return "item{" +
+                "itemID=" + itemID +
+                ", itemTitle='" + itemTitle + '\'' +
+                ", itemDesc='" + itemDesc + '\'' +
+                ", itemType='" + itemType + '\'' +
+                ", itemEquipable='" + itemEquipable + '\'' +
+                ", itemUsable='" + itemUsable + '\'' +
+                ", itemDamage='" + itemDamage + '\'' +
+                ", itemHealAmount='" + itemHealAmount + '\'' +
+                ", itemInfectionAmount='" + itemInfectionAmount + '\'' +
+                ", itemAmmo='" + itemAmmo + '\'' +
+                '}';
     }
-    public void testDeserialization() throws Exception {
-        while(true){
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter Item Title");
-            String read = sc.next();
+
+    public static ArrayList extractAllItemTitles(Item[] items) {
+        ArrayList titleList = new ArrayList();
+        for (int i = 0; i < items.length; i++) {
+            titleList.add(items[i].getItemTitle());
+        }
+        return titleList;
+    }
+
+    public String extractItemDesc(String currentItemTitle, Item[] items) {
+        String s = "";
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = items[i].getItemDesc();
+            }
+        }
+        return s;
+    }
+
+    public String extractItemType(String currentItemTitle, Item[] items) {
+        String s = "";
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = items[i].getItemType();
+            }
+        }
+        return s;
+    }
+
+    public boolean extractItemEquipable(String currentItemTitle, Item[] items) {
+        boolean s = true;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Boolean.parseBoolean(items[i].getItemEquipable());
+            }
+        }
+        return s;
+    }
+    public boolean extractItemUsabable(String currentItemTitle, Item[] items) {
+        boolean s = true;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Boolean.parseBoolean(items[i].getItemEquipable());
+            }
+        }
+        return s;
+    }
+    public int extractItemDamage(String currentItemTitle, Item[] items) {
+        int s = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Integer.parseInt(items[i].getItemDamage());
+            }
 
         }
-
+        return s;
     }
-}
+    public int extractItemHealAmount(String currentItemTitle, Item[] items) {
+        int s = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Integer.parseInt(items[i].getItemHealAmount());
+            }
 
+        }
+        return s;
+    }
+    public int extractInfectionAmount(String currentItemTitle, Item[] items) {
+        int s = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Integer.parseInt(items[i].getItemInfectionAmount());
+            }
+
+        }
+        return s;
+    }
+    public int extractItemAmmo(String currentItemTitle, Item[] items) {
+        int s = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
+                s = Integer.parseInt(items[i].getItemAmmo());
+            }
+
+        }
+        return s;
+    }
+
+    public static void main(String[] args) {
+        ReadJSonExample read = new ReadJSonExample();
+        Item r = new Item();
+        Item[] itemsHolder = read.items;
+
+        System.out.println(r.extractItemDamage("key", itemsHolder));
+    }
+
+}
