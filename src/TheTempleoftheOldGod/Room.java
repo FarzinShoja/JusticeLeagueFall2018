@@ -1,22 +1,25 @@
 package TheTempleoftheOldGod;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
+
+
+
+
+
 
 public class Room {
 
+    public Map<String, String> interactionMap = new LinkedHashMap<>();
     private int RoomID;
     private String roomTitle;
     private String roomDesc;
+    private String roomDescSecond;
     private String[] interactions;
     private String roomItem;
     private String roomMons;
     private String roomPuzzle;
     private String[] exitRooms;
-
-    public Map<String, String> interactionMap = new HashMap<String, String>();
 
 
     public Room() {
@@ -34,6 +37,7 @@ public class Room {
     }
 
     public String[] getInteractions() {
+
         return interactions;
     }
 
@@ -49,6 +53,22 @@ public class Room {
     public void setRoomTitle(String roomTitle) {
 
         this.roomTitle = roomTitle;
+    }
+
+    public Map<String, String> getInteractionMap() {
+        return interactionMap;
+    }
+
+    public void setInteractionMap(Map<String, String> interactionMap) {
+        this.interactionMap = interactionMap;
+    }
+
+    public String getRoomDescSecond() {
+        return roomDescSecond;
+    }
+
+    public void setRoomDescSecond(String roomDescSecond) {
+        this.roomDescSecond = roomDescSecond;
     }
 
     public String getRoomDesc() {
@@ -107,11 +127,13 @@ public class Room {
                 "RoomID=" + RoomID +
                 ", roomTitle='" + roomTitle + '\'' +
                 ", roomDesc='" + roomDesc + '\'' +
+                ", roomDescSecond='" + roomDescSecond + '\'' +
                 ", interactions=" + Arrays.toString(interactions) +
                 ", roomItem='" + roomItem + '\'' +
                 ", roomMons='" + roomMons + '\'' +
                 ", roomPuzzle='" + roomPuzzle + '\'' +
                 ", exitRooms=" + Arrays.toString(exitRooms) +
+                ", interactionMap=" + interactionMap +
                 '}';
     }
 
@@ -127,7 +149,7 @@ public class Room {
         ArrayList exitList = new ArrayList();
         for (int i = 0; i < rooms.length; i++) {
             if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
-                exitList.add(Arrays.toString(rooms[i].getExitRooms()));
+                exitList.add(Arrays.toString(rooms[i].getExitRooms()).substring(1, Arrays.toString(rooms[i].getExitRooms()).length() - 1));
             }
         }
         return exitList;
@@ -138,6 +160,47 @@ public class Room {
         for (int i = 0; i < rooms.length; i++) {
             if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
                 s = rooms[i].getRoomDesc();
+            }
+        }
+        return s;
+    }
+
+
+    public String extractRoomDescSecond(String currentRoomTitle, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                s = rooms[i].getRoomDescSecond();
+            }
+        }
+        return s;
+    }
+
+    public String extractRoomMonster(String currentRoomTitle, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                s = rooms[i].getRoomMons();
+            }
+        }
+        return s;
+    }
+
+    public String extractRoomItem(String currentRoomTitle, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                s = rooms[i].getRoomItem();
+            }
+        }
+        return s;
+    }
+
+    public String extractRoomPuzzle(String currentRoomTitle, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                s = rooms[i].getRoomPuzzle();
             }
         }
         return s;
@@ -176,7 +239,17 @@ public class Room {
         }
     }
 
+    public String currentRoomTitle(int rID, Room[] rooms) {
+        String s = "";
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i].getRoomID() == rID) {
+                s = rooms[i].getRoomTitle();
+            } else {
+                //Do Nothing...
+            }
+        }
+        return s;
+    }
+
 
 }
-
-
