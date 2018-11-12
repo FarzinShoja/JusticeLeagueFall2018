@@ -2,10 +2,13 @@ package TheTempleoftheOldGod;
 
 import TheTempleoftheOldGod.ReadJSonFile;
 import TheTempleoftheOldGod.Room;
-
+import TheTempleoftheOldGod.Inventory;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
+
+import static TheTempleoftheOldGod.Inventory.addToInventory;
+import static TheTempleoftheOldGod.Inventory.removeFromInventory;
 
 public class Main {
 
@@ -100,7 +103,17 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Pickup")) {
                 //code in here need to act with item class
+                addToInventory(currentRoomTitle, roomsHolder);
+            }
 
+            if (userInputString.equalsIgnoreCase("checkinv")) {
+                //code in here need to act with item class
+                addToInventory(currentRoomTitle, roomsHolder);
+            }
+
+            if (userInputString.equalsIgnoreCase("drop")) {
+                //code in here need to act with item class
+                removeFromInventory(userInputScanner);
             }
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
