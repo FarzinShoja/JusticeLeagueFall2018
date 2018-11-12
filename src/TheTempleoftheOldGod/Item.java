@@ -17,7 +17,7 @@ public class Item {
     private String itemDamage;
     private String itemHealAmount;
     private String itemInfectionAmount;
-    private String itemAmmo;
+    private int itemAmmo;
 
     public static class ReadItemJson {
         public Item[] items;
@@ -110,11 +110,11 @@ public class Item {
         this.itemInfectionAmount = itemInfectionAmount;
     }
 
-    public String getItemAmmo() {
+    public int getItemAmmo() {
         return itemAmmo;
     }
 
-    public void setItemAmmo(String itemAmmo) {
+    public void setItemAmmo(int itemAmmo) {
         this.itemAmmo = itemAmmo;
     }
 
@@ -214,19 +214,20 @@ public class Item {
         int s = 0;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Integer.parseInt(items[i].getItemAmmo());
+                s = items[i].getItemAmmo();
             }
 
         }
         return s;
     }
 
+
     public static void main(String[] args) {
         ReadItemJson read = new ReadItemJson();
         Item r = new Item();
         Item[] itemsHolder = read.items;
 
-        System.out.println(r.extractItemDamage("key", itemsHolder));
+        System.out.println(r.extractItemAmmo("force shield capsule", itemsHolder));
     }
 
 }
