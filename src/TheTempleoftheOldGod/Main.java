@@ -1,14 +1,7 @@
 package TheTempleoftheOldGod;
 
-import TheTempleoftheOldGod.ReadJSonFile;
-import TheTempleoftheOldGod.Room;
-import TheTempleoftheOldGod.Inventory;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
-
-import static TheTempleoftheOldGod.Inventory.addToInventory;
-import static TheTempleoftheOldGod.Inventory.removeFromInventory;
 
 public class Main {
 
@@ -17,6 +10,8 @@ public class Main {
         ReadJSonFile read = new ReadJSonFile();
         Room r = new Room();
         Room[] roomsHolder = read.rooms;
+        Item i = new Item();
+        Item[] itemHolder = read.items;
 
         boolean isGameFinished = false;
         int currentRoomID = 0;
@@ -43,20 +38,19 @@ public class Main {
                 System.out.println("Welcome to " + currentRoomTitle + " Room" +
                         "\nRoom Description: " + r.extractRoomDesc(currentRoomTitle, roomsHolder));
                 System.out.println("\nType Interact to continue");
-
             }
             //This if
             if (userInputString.equalsIgnoreCase("Interact")) {
                 r.extractRoomInter(currentRoomTitle, roomsHolder);
                 String sInteraction = "";
 
-                for (Map.Entry<String, String> m : r.interactionMap.entrySet()) {
+                for (Map.Entry<String, String> m : r.getInteractionMap().entrySet()) {
                     System.out.println(m.getKey());
 
                     while (true) {
                         sInteraction = (userInputScanner.nextLine());
-                        if (r.interactionMap.containsKey(sInteraction)) {
-                            System.out.println(r.interactionMap.get(sInteraction));
+                        if (r.getInteractionMap().containsKey(sInteraction)) {
+                            System.out.println(r.getInteractionMap().get(sInteraction));
                             // r.interactionMap.remove(sInteraction);
                             break;
                         } else {
@@ -79,7 +73,7 @@ public class Main {
                 boolean ex = false;
 
                 if (!r.extractRoomMonster(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
-                    System.out.println("Type Fight to Battle " + r.extractRoomMonster(currentRoomTitle, roomsHolder));
+                    System.out.println(" You Have to Battke " + r.extractRoomMonster(currentRoomTitle, roomsHolder) + " Type Fight to Begin ");
                     ex = true;
                 }
                 if (!r.extractRoomItem(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
@@ -92,9 +86,10 @@ public class Main {
                     ex = true;
                 }
                 if (ex == false) {
-                    System.out.println("Type ExitRoom to view The Exits");
+                    System.out.println("There Is Nothing Is This Room, Type ExitRoom to view The Available Exits");
                 }
             }
+
 
             if (userInputString.equalsIgnoreCase("Fight")) {
                 //code in here need to act with monster class
@@ -103,32 +98,36 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Pickup")) {
                 //code in here need to act with item class
-                addToInventory(currentRoomTitle, roomsHolder);
-            }
 
-            if (userInputString.equalsIgnoreCase("checkinv")) {
-                //code in here need to act with item class
-                addToInventory(currentRoomTitle, roomsHolder);
-            }
-
-            if (userInputString.equalsIgnoreCase("drop")) {
-                //code in here need to act with item class
-                removeFromInventory(userInputScanner);
             }
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
                 //code in here need to act with puzzle class
 
             }
-
+            //User Will Use This Command to Get The Exit Rooms
             if (userInputString.equalsIgnoreCase("ExitRoom")) {
+                r.extractExitRooms(currentRoomTitle, roomsHolder);
+                for (Map.Entry<String, String> m : r.getExitRoomMap().entrySet()) {
+                    System.out.println(m.getKey() + " : " + m.getValue());
+                }
+                //===================================
 
-                for (int i = 0; i < r.extractExitRooms(currentRoomTitle, roomsHolder).size(); i++) {
-                    String ss = String.valueOf(r.extractExitRooms(currentRoomTitle, roomsHolder).get(i));
-                    System.out.println(ss);
+                while (true) {
+                    System.out.println("Please Type Room you like to Enter:  ");
+                    String userExitInput = userInputScanner.nextLine();
+                    if (r.getExitRoomMap().containsKey(userExitInput)) {
+                        System.out.println("You have Moved From " + currentRoomTitle + " to " + userExitInput);
+                        currentRoomID = r.extractRoomID(userExitInput, roomsHolder);
+                        currentRoomTitle = r.currentRoomTitle(currentRoomID, roomsHolder);
+                        System.out.println("\nRoom Description: " + r.extractRoomDesc(currentRoomTitle, roomsHolder));
+                        System.out.println("\nType Interact to continue");
+                        break;
+                    } else {
+                        System.out.println("Try again");
+                    }
                 }
             }
-
 
             if (userInputString.equalsIgnoreCase("ExitGame")) {
                 isGameFinished = true;

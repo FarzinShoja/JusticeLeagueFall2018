@@ -3,14 +3,10 @@ package TheTempleoftheOldGod;
 import java.lang.reflect.Array;
 import java.util.*;
 
-
-
-
-
-
 public class Room {
 
-    public Map<String, String> interactionMap = new LinkedHashMap<>();
+    private Map<String, String> interactionMap = new LinkedHashMap<>();
+    private Map<String, String> exitRoomMap = new LinkedHashMap<>();
     private int RoomID;
     private String roomTitle;
     private String roomDesc;
@@ -20,6 +16,7 @@ public class Room {
     private String roomMons;
     private String roomPuzzle;
     private String[] exitRooms;
+
 
 
     public Room() {
@@ -121,10 +118,16 @@ public class Room {
         this.exitRooms = exitRooms;
     }
 
+    public Map<String, String> getExitRoomMap() {
+        return exitRoomMap;
+    }
+
     @Override
     public String toString() {
         return "Room{" +
-                "RoomID=" + RoomID +
+                "interactionMap=" + interactionMap +
+                ", exitroomMaop=" + exitRoomMap +
+                ", RoomID=" + RoomID +
                 ", roomTitle='" + roomTitle + '\'' +
                 ", roomDesc='" + roomDesc + '\'' +
                 ", roomDescSecond='" + roomDescSecond + '\'' +
@@ -133,11 +136,14 @@ public class Room {
                 ", roomMons='" + roomMons + '\'' +
                 ", roomPuzzle='" + roomPuzzle + '\'' +
                 ", exitRooms=" + Arrays.toString(exitRooms) +
-                ", interactionMap=" + interactionMap +
                 '}';
     }
 
-    public ArrayList extractAllRoomTitles(Room[] rooms) {
+    public void setExitRoomMap(Map<String, String> exitroomMap) {
+        this.exitRoomMap = exitroomMap;
+    }
+
+    public ArrayList extractAllRoomTitles(String currentRoomTitle, Room[] rooms) {
         ArrayList titleList = new ArrayList();
         for (int i = 0; i < rooms.length; i++) {
             titleList.add(rooms[i].getRoomTitle());
@@ -145,15 +151,7 @@ public class Room {
         return titleList;
     }
 
-    public ArrayList extractExitRooms(String currentRoomTitle, Room[] rooms) {
-        ArrayList exitList = new ArrayList();
-        for (int i = 0; i < rooms.length; i++) {
-            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
-                exitList.add(Arrays.toString(rooms[i].getExitRooms()).substring(1, Arrays.toString(rooms[i].getExitRooms()).length() - 1));
-            }
-        }
-        return exitList;
-    }
+
 
     public String extractRoomDesc(String currentRoomTitle, Room[] rooms) {
         String s = "";
@@ -239,6 +237,26 @@ public class Room {
         }
     }
 
+    public void extractExitRooms(String currentRoomTitle, Room[] rooms) {
+        ArrayList<String> exitRoomArray = new ArrayList();
+        exitRoomMap.clear();
+        for (int i = 0; i < rooms.length; i++) {
+            if (currentRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                //ENHANCED FOR LOOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BELOW
+                // for(String s: rooms[i].getInteractions()){
+                // }
+                for (int x = 0; x < rooms[i].getExitRooms().length; x++) {
+                    String s = rooms[i].getExitRooms()[x];
+                    exitRoomArray.add(s);
+                }
+            }
+        }
+        for (String s : exitRoomArray) {
+            String[] holder = s.split(":");
+            exitRoomMap.put(holder[0], holder[1]);
+        }
+    }
+
     public String currentRoomTitle(int rID, Room[] rooms) {
         String s = "";
         for (int i = 0; i < rooms.length; i++) {
@@ -251,5 +269,15 @@ public class Room {
         return s;
     }
 
-
+    public int extractRoomID(String newRoomTitle, Room[] rooms) {
+        int newRoomID = 0;
+        for (int i = 0; i < rooms.length; i++) {
+            if (newRoomTitle.equalsIgnoreCase(rooms[i].getRoomTitle())) {
+                newRoomID = rooms[i].getRoomID();
+            } else {
+                //Do Nothing
+            }
+        }
+        return newRoomID;
+    }
 }

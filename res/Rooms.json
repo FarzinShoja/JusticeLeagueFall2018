@@ -4,17 +4,25 @@
     "roomTitle": "Outside",
     "roomDesc": "The structure before you rises out of the dead ice like some scab upon the universe. It is a strange thing, all twisted metal, oddly curved stone and chilling blue light. Even with all of the horrible things you have seen throughout your career it inspires a strange trepidation in you. ",
     "interactions": [
+
       "Look Around#the Structure A quick jog around the structure reveals no other en-trance besides the one that has caved in",
+
       "Check Rubble#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
+
       "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded.",
+
       "Fire#the missiles into the rubble, clearing the way into the Temple"
+
     ],
-    "roomMons": "None",
+    "roomMons": "Grizzly",
     "roomItem": "None",
     "roomPuzzle": "None",
     "roomDescSecond": "Rubble covers the only visible entrance, The entrance stands before you",
     "exitRooms": [
-      "Hall1: To the north, the entrance yawns open, its destroyed face reminds you of a maw. "
+      "Hall1: To the north, the entrance yawns open, its destroyed face reminds you of a maw. ",
+      "ChosenGiantRoom: To the north there is a door covered in freezing liquid it is completely frozen solid",
+      "Hall3: To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
+      "GrandHall2: To the south is the hole you fell down. The ladder has retracted up into the ceiling"
     ]
   },
   {
@@ -30,12 +38,12 @@
     "roomPuzzle": "None",
     "roomDescSecond": " ",
     "exitRooms": [
-      "Hall 2 : As you move further into the hall, your nausea worsens, and it becomes hard to look away from the Great Statue."
+      "Hall2: As you move further into the hall, your nausea worsens, and it becomes hard to look away from the Great Statue."
     ]
   },
   {
     "roomID": "02",
-    "roomTitle": "Hall2",
+    "roomTitle": "Hall3",
     "roomDesc": "Now you can clearly see the Statue. It looms down from the ceiling, and you can feel it watch you. ",
     "interactions": [
       "Check the Statue#Now once again pass-ing for normal, the horrific statue leers down at you from its perch.",
@@ -46,7 +54,7 @@
     "roomPuzzle": "None",
     "roomDescSecond": "The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you. Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.",
     "exitRooms": [
-      "Final Room : Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
+      "PuzzleRoom1: Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
     ]
   },
   {
@@ -63,10 +71,10 @@
     "roomPuzzle": "Puzzle2",
     "roomDescSecond": "None",
     "exitRooms": [
-      "ChosenSpiderRoom : To the east is a door that appears to be heavily sealed by some unknown mechanism",
-      "ChosenGiantRoom : To the north there is a door covered in freezing liquid [it is completely frozen solid",
-      "Hall3 : To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
-      "GrandHall2 : To the south is the hole you fell down. The ladder has retracted up into the ceiling"
+      "ChosenSpiderRoom: To the east is a door that appears to be heavily sealed by some unknown mechanism",
+      "ChosenGiantRoom: To the north there is a door covered in freezing liquid it is completely frozen solid",
+      "Hall3: To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
+      "GrandHall2: To the south is the hole you fell down. The ladder has retracted up into the ceiling"
     ]
   }
 ]

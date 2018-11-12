@@ -1,9 +1,5 @@
 package TheTempleoftheOldGod;
 
-import TheTempleoftheOldGod.Main;
-import TheTempleoftheOldGod.ReadJSonFile;
-import TheTempleoftheOldGod.Room;
-
 import java.util.HashMap;
 import java.util.Scanner;
 

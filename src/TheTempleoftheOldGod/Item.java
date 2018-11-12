@@ -1,10 +1,5 @@
 package TheTempleoftheOldGod;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Item {
@@ -19,23 +14,12 @@ public class Item {
     private String itemInfectionAmount;
     private int itemAmmo;
 
-    public static class ReadItemJson {
-        public Item[] items;
-
-        public void readItemJson() throws Exception {
-            String str1 = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
-            ObjectMapper om1 = new ObjectMapper();
-            items = om1.readValue(str1, Item[].class);
+    public static ArrayList extractAllItemTitles(Item[] items) {
+        ArrayList titleList = new ArrayList();
+        for (int i = 0; i < items.length; i++) {
+            titleList.add(items[i].getItemTitle());
         }
-
-        public ReadItemJson() {
-            try {
-                readItemJson();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
+        return titleList;
     }
 
     public int getItemID() {
@@ -134,14 +118,6 @@ public class Item {
                 '}';
     }
 
-    public static ArrayList extractAllItemTitles(Item[] items) {
-        ArrayList titleList = new ArrayList();
-        for (int i = 0; i < items.length; i++) {
-            titleList.add(items[i].getItemTitle());
-        }
-        return titleList;
-    }
-
     public String extractItemDesc(String currentItemTitle, Item[] items) {
         String s = "";
         for (int i = 0; i < items.length; i++) {
@@ -171,6 +147,7 @@ public class Item {
         }
         return s;
     }
+
     public boolean extractItemUsabable(String currentItemTitle, Item[] items) {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
@@ -180,6 +157,7 @@ public class Item {
         }
         return s;
     }
+
     public int extractItemDamage(String currentItemTitle, Item[] items) {
         int s = 0;
         for (int i = 0; i < items.length; i++) {
@@ -190,6 +168,7 @@ public class Item {
         }
         return s;
     }
+
     public int extractItemHealAmount(String currentItemTitle, Item[] items) {
         int s = 0;
         for (int i = 0; i < items.length; i++) {
@@ -200,6 +179,7 @@ public class Item {
         }
         return s;
     }
+
     public int extractInfectionAmount(String currentItemTitle, Item[] items) {
         int s = 0;
         for (int i = 0; i < items.length; i++) {
@@ -210,6 +190,7 @@ public class Item {
         }
         return s;
     }
+
     public int extractItemAmmo(String currentItemTitle, Item[] items) {
         int s = 0;
         for (int i = 0; i < items.length; i++) {
@@ -221,13 +202,7 @@ public class Item {
         return s;
     }
 
-
-    public static void main(String[] args) {
-        ReadItemJson read = new ReadItemJson();
-        Item r = new Item();
-        Item[] itemsHolder = read.items;
-
-        System.out.println(r.extractItemAmmo("force shield capsule", itemsHolder));
+    public class ReadItemJson {
     }
 
 }
