@@ -1,7 +1,7 @@
 [
   {
       "itemID": "00",
-      "itemTitle": "Infection Stone",
+    "itemTitle": "Health Stone",
       "itemDesc": "Mysterious red Stone that emits a red light. When crushed provides healing for + 20 Health.",
       "itemType": "consumable",
       "itemEquipable": "false",
@@ -9,7 +9,7 @@
       "itemDamage": "0",
       "itemHealAmount": "0",
       "itemInfectionAmount": "20",
-      "itemAmmo": null
+    "itemAmmo": "None"
   },
   {
       "itemID": "01",
@@ -21,7 +21,7 @@
       "itemDamage": "0",
       "itemHealAmount": "0",
       "itemInfectionAmount": "0",
-      "itemAmmo": null
+    "itemAmmo": "None"
   },
   {
       "itemID": "02",
@@ -45,7 +45,7 @@
       "itemDamage": "0",
       "itemHealAmount": "0",
       "itemInfectionAmount": "-100",
-      "itemAmmo": null
+    "itemAmmo": "None"
   },
   {
       "itemID": "04",
@@ -57,7 +57,7 @@
       "itemDamage": "0",
       "itemHealAmount": "0",
       "itemInfectionAmount": "10",
-      "itemAmmo": null
+    "itemAmmo": "None"
   },
   {
       "itemID": "05",
@@ -69,7 +69,7 @@
       "itemDamage": "0",
       "itemHealAmount": "0",
       "itemInfectionAmount": "0",
-      "itemAmmo": null
+    "itemAmmo": "None"
   },
   {
       "itemID": "06",
