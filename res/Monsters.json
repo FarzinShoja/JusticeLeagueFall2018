@@ -8,9 +8,9 @@
       "monsterRoom": "ChosenSpider room ",
       "monsterItem": "IT11",
       "monsterHealth": "15",
-      "monsterLightDam": "3",
+      "monsterLightDmg": "3",
       "monsterLightDesc": "The creature twists its self forward, raking its forearms across you. ",
-      "monsterHeavyDam": "7",
+      "monsterHeavyDmg": "7",
       "monsterHeavyDesc": "The mouth begins to distend from its face…with a shriek of pain and ecstasy its mouth shoots forward [ pumping acid though your armor"
     }
   },
@@ -23,9 +23,9 @@
       "monsterRoom": "ChosenFungus Room ",
       "monsterItem": "",
       "monsterHealth": "25",
-      "monsterLightDam": "5",
+      "monsterLightDmg": "5",
       "monsterLightDesc": "Suddenly it whips itself at you.",
-      "monsterHeavyDam": "10",
+      "monsterHeavyDmg": "10",
       "monsterHeavyDesc": "It coils in on it-self…With startling speed it launches its entirety at you [as it swarms around you, its roots dig and tear at your armor and the flesh beneath"
     }
   },
@@ -38,9 +38,9 @@
       "monsterRoom": "ChosenSlime Room",
       "monsterItem": "IT1",
       "monsterHealth": "35",
-      "monsterLightDam": "6",
+      "monsterLightDmg": "6",
       "monsterLightDesc": "It spews a horrible liquid at you",
-      "monsterHeavyDam": "11",
+      "monsterHeavyDmg": "11",
       "monsterHeavyDesc": "It beings to spin rapid-ly… metallic claws emerge at its top, and it leaps at you. [It drills through your armor and tears and rips at the flesh be-neath. "
     }
   },
@@ -52,9 +52,9 @@
       "monsterRoom": "ChosenTree Room",
       "monsterItem": "",
       "monsterHealth": "46",
-      "monsterLightDam": "5",
+      "monsterLightDmg": "5",
       "monsterLightDesc": "The thing mindlessly writhes around, and a limb strike you at random. ",
-      "monsterHeavyDam": "13",
+      "monsterHeavyDmg": "13",
       "monsterHeavyDesc": "The Chosen stops it random shaking… as one the towering mass rears back and strikes at you. [You are smashed to the ground and trampled by hun-dreds of limbs. "
     }
   },
@@ -66,9 +66,9 @@
       "monsterRoom": "Chosen Snake Room ",
       "monsterItem": "",
       "monsterHealth": "33",
-      "monsterLightDam": "9",
+      "monsterLightDmg": "9",
       "monsterLightDesc": "It screams in agony as it rears up and slams itself against you. Take 11 damage.  ",
-      "monsterHeavyDam": "17",
+      "monsterHeavyDmg": "17",
       "monsterHeavyDesc": "It beings to yell and shriek in protest as it body coils up beneath it…It leap at you and attempts to coil itself around you. [It con-stricts you between its coils as its arms rip and tear at whatever it can get its hands on."
     }
   },
@@ -81,9 +81,9 @@
       "monsterRoom": "ChosenDeath Room ",
       "monsterItem": "",
       "monsterHealth": "20",
-      "monsterLightDam": "2",
+      "monsterLightDmg": "2",
       "monsterLightDesc": "The Eternal lobs some of the black substance at you. Wherever it touches, it feels like an icicle stabs through you",
-      "monsterHeavyDam": "4",
+      "monsterHeavyDmg": "4",
       "monsterHeavyDesc": "The Eternal stops moving and the ma-chines within it began whirring faster…with a gurgling sigh it charges you as tor-rents of the substance pours out of every inch of it. [It knocks you to the floor and covers you in the black substance/Your heart stops, your lungs freeze, and you feel Death creeping in before your suit resus-citates you."
     }
   },
@@ -96,9 +96,9 @@
       "monsterRoom": "ChosenReturned Room ",
       "monsterItem": "",
       "monsterHealth": "15",
-      "monsterLightDam": "10",
+      "monsterLightDmg": "10",
       "monsterLightDesc": "The Eternal lobs some of the black substance at you. Wherever it touches, it feels like an icicle stabs through you",
-      "monsterHeavyDam": "22",
+      "monsterHeavyDmg": "22",
       "monsterHeavyDesc": "The Eternal stops moving and the ma-chines within it began whirring faster…with a gurgling sigh it charges you as tor-rents of the substance pours out of every inch of it. [It knocks you to the floor and covers you in the black substance/Your heart stops, your lungs freeze, and you feel Death creeping in before your suit resus-citates you."
     }
   },
@@ -111,9 +111,9 @@
       "monsterRoom": "ChosenUnborn Room ",
       "monsterItem": "",
       "monsterHealth": "",
-      "monsterLightDam": "7",
+      "monsterLightDmg": "7",
       "monsterLightDesc": "With a cry of panic, the Unborn whips the wires around it frantically",
-      "monsterHeavyDam": "18",
+      "monsterHeavyDmg": "18",
       "monsterHeavyDesc": "The Unborn lets out a disturbing laugh…Your suit suddenly begins to twist and bend in on itself. [Parts of your own suit break off and impale you beneath the armor"
     }
   },
@@ -126,9 +126,9 @@
       "monsterRoom": "ChosenGiant Room ",
       "monsterItem": "",
       "monsterHealth": "60",
-      "monsterLightDam": "15",
+      "monsterLightDmg": "15",
       "monsterLightDesc": "With a vile taunt and a chuckle, the Monstrosity flicks a bolt of energy at you",
-      "monsterHeavyDam": "20",
+      "monsterHeavyDmg": "20",
       "monsterHeavyDesc": "The Monstrosity begins to rear back…lunging for-ward, it picks you up. With a hearty laugh, it berates you in its foul tongue. [It then grins and chucks you against the wall."
     }
   }

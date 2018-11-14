@@ -1,14 +1,118 @@
 package TheTempleoftheOldGod;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Inventory {
 
 
-    public static HashMap<String, Integer> inventory = new HashMap<>();
+    ReadJSonFile read = new ReadJSonFile();
+    Room r = new Room();
+    Room[] roomsHolder = read.rooms;
+    Item i = new Item();
+    Item[] itemHolder = read.items;
+    int itemQuantity = 0;
+    private Map<String, Integer> inventoryMap = new LinkedHashMap<>();
 
-    public static String addToInventory(String currentRoomTitle, Room[] rooms) {
+    public Map<String, Integer> getInventoryMap() {
+        return inventoryMap;
+    }
+
+    public void setInventoryMap(Map<String, Integer> inventoryMap) {
+        this.inventoryMap = inventoryMap;
+    }
+
+    @Override
+    public String toString() {
+        return "Inventory{" +
+                "inventoryMap=" + inventoryMap +
+                '}';
+    }
+
+
+    public boolean itemsExistInInventory(String itemTitle) {
+        boolean itemExist = false;
+        if (inventoryMap.containsKey(itemTitle)) {
+            itemExist = true;
+        } else {
+            //Do Nothing
+        }
+
+        return itemExist;
+    }
+
+    public String addToInventory(String currentRoomItem, Room[] rooms) {
+        if (!inventoryMap.isEmpty()) {
+            itemQuantity = inventoryMap.get(currentRoomItem);
+            for (int j = 0; j < rooms.length; j++) {
+                if (!currentRoomItem.equalsIgnoreCase("None")) {
+                    inventoryMap.put(r.extractRoomItem(currentRoomItem, roomsHolder), itemQuantity + 1);
+
+                }
+                System.out.println(r.extractRoomItem(currentRoomItem, roomsHolder) + " was added to your inventory.");
+            }
+            return i.getItemTitle();
+        } else {
+            int itemQuantity = 0;
+            for (int j = 0; j < rooms.length; j++) {
+                if (!currentRoomItem.equalsIgnoreCase("None")) {
+                    inventoryMap.put(r.extractRoomItem(currentRoomItem, roomsHolder), itemQuantity + 1);
+
+                }
+            }
+            System.out.println(r.extractRoomItem(currentRoomItem, roomsHolder) + " was added to your inventory.");
+        }
+        return i.getItemTitle();
+    }
+
+    public String removeFromInventory(String currentRoomItem, Room[] rooms) {
+        Scanner userInput = new Scanner(System.in);
+        String itemToRemove = userInput.next();
+
+        if (itemsExistInInventory(itemToRemove)) {
+            itemQuantity = inventoryMap.get(currentRoomItem);
+            for (int j = 0; j < rooms.length; j++) {
+                inventoryMap.put(r.extractRoomItem(currentRoomItem, roomsHolder), itemQuantity - 1);
+
+                if (inventoryMap.containsValue(0)) {
+                    inventoryMap.remove(r.extractRoomItem(currentRoomItem, roomsHolder), itemQuantity);
+                }
+            }
+        } else {
+            System.out.println("That item is not in your inventory");
+        }
+        return i.getItemTitle();
+    }
+
+    public void checkInventory() {
+        if (inventoryMap.size() == 0) {
+            System.out.println("There's nothing in your inventory");
+        } else {
+
+
+            System.out.println(inventoryMap);
+        }
+    }
+}
+
+
+
+
+    /*
+package TheTempleoftheOldGod;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Inventory {
+
+
+    private Map<String, Integer> inventoryMap = new LinkedHashMap<>();
+
+    public  String addToInventory(String currentRoomTitle, Room[] rooms) {
 
         int amount = 1;
         String s = "";
@@ -20,11 +124,11 @@ public class Inventory {
         }
         if (s.isEmpty()) {
             System.out.println("There are no items here");
-        } else if (inventory.containsKey(s)) {
-            inventory.put(s, inventory.get(s) + 1);
+        } else if (inventoryMap.containsKey(s)) {
+            inventoryMap.put(s, inventoryMap.get(s) + 1);
 
         } else {
-            inventory.put(s, 1);
+            inventoryMap.put(s, 1);
             System.out.println(s + " was added to your inventory");
         }
 
@@ -33,30 +137,30 @@ public class Inventory {
 
     }
 
-    public static String removeFromInventory(Scanner userInput) {
+    public String removeFromInventory(Scanner userInput) {
         String item = "";
 
-        if (inventory.size() == 0) {
+        if (inventoryMap.size() == 0) {
             System.out.println("There's nothing in your inventory");
         } else {
 
             item = userInput.nextLine();
-            if (inventory.containsKey(item)) {
+            if (inventoryMap.containsKey(item)) {
 
-                inventory.remove(item);
+                inventoryMap.remove(item);
                 System.out.println(item + " was dropped");
             }
         }
         return item;
     }
 
-    public static void CheckInventory() {
-        if (inventory.size() == 0) {
+    public void CheckInventory() {
+        if (inventoryMap.size() == 0) {
             System.out.println("There's nothing in your inventory");
         } else {
 
 
-            System.out.println(inventory);
+            System.out.println(inventoryMap);
         }
     }
 
@@ -74,3 +178,4 @@ public class Inventory {
 
     }
 }
+*/

@@ -73,7 +73,7 @@ public class Main {
                 boolean ex = false;
 
                 if (!r.extractRoomMonster(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
-                    System.out.println(" You Have to Battke " + r.extractRoomMonster(currentRoomTitle, roomsHolder) + " Type Fight to Begin ");
+                    System.out.println(" You Have to Battle " + r.extractRoomMonster(currentRoomTitle, roomsHolder) + " Type Fight to Begin ");
                     ex = true;
                 }
                 if (!r.extractRoomItem(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
@@ -86,7 +86,7 @@ public class Main {
                     ex = true;
                 }
                 if (ex == false) {
-                    System.out.println("There Is Nothing Is This Room, Type ExitRoom to view The Available Exits");
+                    System.out.println("There Is Nothing In This Room, Type ExitRoom to view The Available Exits");
                 }
             }
 
@@ -98,7 +98,8 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Pickup")) {
                 //code in here need to act with item class
-
+                Inventory add = new Inventory();
+                add.addToInventory(currentRoomTitle, roomsHolder);
             }
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
@@ -134,8 +135,8 @@ public class Main {
             }
 
             if (userInputString.equalsIgnoreCase("Help")) {
-                System.out.println("Type in : ExitGame to close the game.");
-                System.out.println("");
+                System.out.println("Type 'ExitGame to close the game.");
+                System.out.println();
             }
         }
     }
