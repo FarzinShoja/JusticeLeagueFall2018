@@ -15,7 +15,7 @@
 
     ],
     "roomMons": "None",
-    "roomItem": "None",
+    "roomItem": "IT10",
     "roomPuzzle": "None",
     "roomDescSecond": "Rubble covers the only visible entrance, The entrance stands before you",
     "exitRooms": [
@@ -34,7 +34,7 @@
       "Continue#The first one you examine is noticeably larger and is in much better condition. Once you exam-ine all of the other bodies you notice that it is no longer there."
     ],
     "roomMons": "None",
-    "roomItem": "None",
+    "roomItem": "IT11",
     "roomPuzzle": "None",
     "roomDescSecond": " ",
     "exitRooms": [
@@ -50,7 +50,7 @@
       "Check the Carvings#The carvings around the door show a figure overcoming four trials and obtaining four keys, as you touch one of them, the door to your right shoots open. Traces of your target lead behind the door beneath the statue."
     ],
     "roomMons": "None",
-    "roomItem": "None",
+    "roomItem": "IT10",
     "roomPuzzle": "None",
     "roomDescSecond": "The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you. Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.",
     "exitRooms": [

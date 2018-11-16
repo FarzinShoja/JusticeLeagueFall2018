@@ -140,6 +140,7 @@ public class Room {
     }
 
     public void setExitRoomMap(Map<String, String> exitroomMap) {
+
         this.exitRoomMap = exitroomMap;
     }
 

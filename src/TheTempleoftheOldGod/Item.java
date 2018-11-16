@@ -14,10 +14,10 @@ public class Item {
     private String itemInfectionAmount;
     private int itemAmmo;
 
-    public static ArrayList extractAllItemTitles(Item[] items) {
-        ArrayList titleList = new ArrayList();
-        for (int i = 0; i < items.length; i++) {
-            titleList.add(items[i].getItemTitle());
+    public static ArrayList<String> extractAllItemTitles(Item[] items) {
+        ArrayList<String> titleList = new ArrayList<>();
+        for (Item item : items) {
+            titleList.add(item.getItemTitle());
         }
         return titleList;
     }
@@ -202,7 +202,12 @@ public class Item {
         return s;
     }
 
-    public class ReadItemJson {
-    }
+    public String extractItemTitles(String itemTitle, Item[] items) {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].getItemTitle() == itemTitle) {
 
+            }
+        }
+        return itemTitle;
+    }
 }

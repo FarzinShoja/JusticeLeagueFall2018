@@ -12,6 +12,7 @@ public class Main {
         Room[] roomsHolder = read.rooms;
         Item i = new Item();
         Item[] itemHolder = read.items;
+        Inventory inventory = new Inventory();
 
         boolean isGameFinished = false;
         int currentRoomID = 0;
@@ -68,6 +69,9 @@ public class Main {
                 }
             }
 
+            if (userInputString.equalsIgnoreCase("Check Inventory")) {
+                inventory.checkInventory();
+            }
             //============================
             if (userInputString.equalsIgnoreCase("Examine")) {
                 boolean ex = false;
@@ -77,7 +81,7 @@ public class Main {
                     ex = true;
                 }
                 if (!r.extractRoomItem(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
-                    System.out.println("Type Pickup to add The " + r.extractRoomItem(currentRoomTitle, roomsHolder) + "to Inventory");
+                    System.out.println("Type Pickup to add The " + r.extractRoomItem(currentRoomTitle, roomsHolder) + " to Inventory, or Type Skip ");
                     ex = true;
                 }
 
@@ -98,8 +102,11 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Pickup")) {
                 //code in here need to act with item class
-                Inventory add = new Inventory();
-                add.addToInventory(currentRoomTitle, roomsHolder);
+                inventory.addToInventory(currentRoomTitle, roomsHolder);
+            } else if (userInputString.equalsIgnoreCase("Skip")) {
+                System.out.println("You Didn't add the Item to Your Inventory Type ExitRoom to show the Available Exits");
+            } else {
+                //Do Nothings
             }
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
