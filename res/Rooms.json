@@ -31,7 +31,7 @@
     "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
     "interactions": [
       "Check Bodies#Warily you examine the bodies. They are grotesque to look at, humanoid in shape only. Extending for every orifice are masses of wires, and most of the body is covered by strange shapes and objects you guess to be cybernetic sensors, as well as things of a more obscured pur-pose.",
-      "Continue#The first one you examine is noticeably larger and is in much better condition. Once you exam-ine all of the other bodies you notice that it is no longer there."
+      "Continue#The first one you examine is noticeably larger and is in much better condition. Once you examine all of the other bodies you notice that it is no longer there."
     ],
     "roomMons": "None",
     "roomItem": "IT11",

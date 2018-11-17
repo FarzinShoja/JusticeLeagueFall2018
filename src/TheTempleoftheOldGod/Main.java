@@ -1,5 +1,7 @@
 package TheTempleoftheOldGod;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -72,6 +74,24 @@ public class Main {
             if (userInputString.equalsIgnoreCase("Check Inventory")) {
                 inventory.checkInventory();
             }
+            if (userInputString.equalsIgnoreCase("Drop Item")) {
+                inventory.checkInventoryForDrop();
+                System.out.println("Type the Item ID to remove it from inventory, if you changed yor mind Type Skip");
+                String sDrop;
+                while (true) {
+                    sDrop = (userInputScanner.nextLine());
+                    if (inventory.getInventoryMap().containsKey(sDrop)) {
+                        inventory.removeFromInventory(sDrop);
+                        System.out.println("You have Successfully Removed the Item From Your Inventory");
+                        break;
+                    } else if (sDrop.equalsIgnoreCase("Skip")) {
+                        System.out.println("You Didn't Remove Anything from Your Inventory");
+                        break;
+                    } else {
+                        System.out.println("Check Your Item ID...");
+                    }
+                }
+            }
             //============================
             if (userInputString.equalsIgnoreCase("Examine")) {
                 boolean ex = false;
@@ -102,7 +122,8 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Pickup")) {
                 //code in here need to act with item class
-                inventory.addToInventory(currentRoomTitle, roomsHolder);
+                String itemID = r.extractRoomItem(currentRoomTitle, roomsHolder);
+                inventory.addToInventory(itemID, itemHolder);
             } else if (userInputString.equalsIgnoreCase("Skip")) {
                 System.out.println("You Didn't add the Item to Your Inventory Type ExitRoom to show the Available Exits");
             } else {
@@ -111,7 +132,8 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
                 //code in here need to act with puzzle class
-
+                System.out.println(Arrays.toString(itemHolder));
+                System.out.println("------" + Arrays.toString(roomsHolder));
             }
             //User Will Use This Command to Get The Exit Rooms
             if (userInputString.equalsIgnoreCase("ExitRoom")) {

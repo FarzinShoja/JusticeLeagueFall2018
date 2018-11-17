@@ -15,6 +15,7 @@ public class ReadJSonFile {
     public ReadJSonFile() {
         try {
             readRoomJson();
+            readItemJson();
         } catch (Exception e) {
             e.printStackTrace();
         }

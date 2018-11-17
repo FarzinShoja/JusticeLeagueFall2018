@@ -3,7 +3,7 @@ package TheTempleoftheOldGod;
 import java.util.ArrayList;
 
 public class Item {
-    private int itemID;
+    private String itemID;
     private String itemTitle;
     private String itemDesc;
     private String itemType;
@@ -22,11 +22,11 @@ public class Item {
         return titleList;
     }
 
-    public int getItemID() {
+    public String getItemID() {
         return itemID;
     }
 
-    public void setItemID(int itemID) {
+    public void setItemID(String itemID) {
         this.itemID = itemID;
     }
 
@@ -202,12 +202,17 @@ public class Item {
         return s;
     }
 
-    public String extractItemTitles(String itemTitle, Item[] items) {
-        for (int i = 0; i < items.length; i++) {
-            if (items[i].getItemTitle() == itemTitle) {
 
+    public String extractCurrentItemTitle(String itemID, Item[] items) {
+        String s = "";
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].getItemTitle() == itemID) {
+                s = items[i].getItemTitle();
+            } else {
+                //Do Nothing...
             }
         }
-        return itemTitle;
+        return s;
     }
+
 }
