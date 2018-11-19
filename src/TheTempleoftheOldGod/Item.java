@@ -7,7 +7,7 @@ public class Item {
     private String itemTitle;
     private String itemDesc;
     private String itemType;
-    private String itemEquipable;
+    private String itemEquitable;
     private String itemUsable;
     private String itemDamage;
     private String itemHealAmount;
@@ -23,22 +23,27 @@ public class Item {
     }
 
     public String getItemID() {
+
         return itemID;
     }
 
     public void setItemID(String itemID) {
+
         this.itemID = itemID;
     }
 
     public String getItemTitle() {
+
         return itemTitle;
     }
 
     public void setItemTitle(String itemTitle) {
+
         this.itemTitle = itemTitle;
     }
 
     public String getItemDesc() {
+
         return itemDesc;
     }
 
@@ -54,12 +59,12 @@ public class Item {
         this.itemType = itemType;
     }
 
-    public String getItemEquipable() {
-        return itemEquipable;
+    public String getitemEquitable() {
+        return itemEquitable;
     }
 
-    public void setItemEquipable(String itemEquipable) {
-        this.itemEquipable = itemEquipable;
+    public void setitemEquitable(String itemEquitable) {
+        this.itemEquitable = itemEquitable;
     }
 
     public String getItemUsable() {
@@ -109,7 +114,7 @@ public class Item {
                 ", itemTitle='" + itemTitle + '\'' +
                 ", itemDesc='" + itemDesc + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", itemEquipable='" + itemEquipable + '\'' +
+                ", itemEquitable='" + itemEquitable + '\'' +
                 ", itemUsable='" + itemUsable + '\'' +
                 ", itemDamage='" + itemDamage + '\'' +
                 ", itemHealAmount='" + itemHealAmount + '\'' +
@@ -138,11 +143,11 @@ public class Item {
         return s;
     }
 
-    public boolean extractItemEquipable(String currentItemTitle, Item[] items) {
+    public boolean extractitemEquitable(String currentItemTitle, Item[] items) {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getItemEquipable());
+                s = Boolean.parseBoolean(items[i].getitemEquitable());
             }
         }
         return s;
@@ -152,7 +157,7 @@ public class Item {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getItemEquipable());
+                s = Boolean.parseBoolean(items[i].getitemEquitable());
             }
         }
         return s;

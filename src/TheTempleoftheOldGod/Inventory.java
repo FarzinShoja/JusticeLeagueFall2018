@@ -6,14 +6,6 @@ import java.util.Map;
 
 public class Inventory {
 
-
-    ReadJSonFile read = new ReadJSonFile();
-    Room r = new Room();
-    Room[] roomsHolder = read.rooms;
-    Item i = new Item();
-    Item[] itemHolder = read.items;
-    int itemQuantity = 0;
-
     private Map<String, ArrayList<String>> inventoryMap = new LinkedHashMap<>();
 
     public Map<String, ArrayList<String>> getInventoryMap() {
@@ -74,7 +66,7 @@ public class Inventory {
             for (Map.Entry<String, ArrayList<String>> entry : inventoryMap.entrySet()) {
                 String itemID = entry.getKey();
                 ArrayList value = entry.getValue();
-                System.out.println("You have " + itemID + " " + value.get(0) + ": " + value.get(1) + " is" + value.get(2) + " at this amount  " + value.get(3));
+                System.out.println("You have " + itemID + " " + value.get(0) + "\n ^ Description:  " + value.get(1) + " \n ^^ Type: " + value.get(2) + "\n ^^^ Quantity:  " + value.get(3));
             }
         }
     }
@@ -86,11 +78,10 @@ public class Inventory {
             for (Map.Entry<String, ArrayList<String>> entry : inventoryMap.entrySet()) {
                 String itemID = entry.getKey();
                 ArrayList value = entry.getValue();
-                System.out.println(itemID + value.get(0) + " x" + value.get(3));
+                System.out.println(itemID + " " + value.get(0) + " x" + value.get(3));
             }
         }
     }
-
 
 
 }
