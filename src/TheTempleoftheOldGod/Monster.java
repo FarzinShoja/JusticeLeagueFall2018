@@ -92,12 +92,12 @@ public class Monster {
         this.monsterLightDmg = monsterLightDmg;
     }
 
-    public String getMonsterLightDesc() {
+    public String getmonsterLightDesc() {
         return monsterLightDesc;
     }
 
-    public void setMonsterlightDesc(String monsterlightDesc) {
-        this.monsterLightDesc = monsterlightDesc;
+    public void setmonsterLightDesc(String monsterLightDesc) {
+        this.monsterLightDesc = monsterLightDesc;
     }
 
     public int getMonsterHeavyDmg() {
@@ -127,7 +127,7 @@ public class Monster {
                 ", monsterItem='" + monsterItem + '\'' +
                 ", monsterHealth=" + monsterHealth +
                 ", monsterLightDmg=" + monsterLightDmg +
-                ", monsterlightDesc='" + monsterLightDesc + '\'' +
+                ", monsterLightDesc='" + monsterLightDesc + '\'' +
                 ", monsterHeavyDmg=" + monsterHeavyDmg +
                 ", monsterHeavyDesc='" + monsterHeavyDesc + '\'' +
                 '}';
@@ -205,11 +205,11 @@ public class Monster {
         return s;
     }
 
-    public String extractMonsterLightDesc(String currentMonsterName, Monster[] monsters) {
+    public String extractmonsterLightDesc(String currentMonsterName, Monster[] monsters) {
         String s = "";
         for (int i = 0; i < monsters.length; i++) {
             if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterLightDesc();
+                s = monsters[i].getmonsterLightDesc();
             }
         }
         return s;

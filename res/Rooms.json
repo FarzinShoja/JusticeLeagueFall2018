@@ -4,25 +4,19 @@
     "roomTitle": "Outside",
     "roomDesc": "The structure before you rises out of the dead ice like some scab upon the universe. It is a strange thing, all twisted metal, oddly curved stone and chilling blue light. Even with all of the horrible things you have seen throughout your career it inspires a strange trepidation in you. ",
     "interactions": [
-
       "Look Around#the Structure A quick jog around the structure reveals no other en-trance besides the one that has caved in",
 
       "Check Rubble#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
-
       "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded.",
-
       "Fire#the missiles into the rubble, clearing the way into the Temple"
 
     ],
     "roomMons": "None",
     "roomItem": "IT10",
     "roomPuzzle": "None",
-    "roomDescSecond": "Rubble covers the only visible entrance, The entrance stands before you",
+    "roomDescSecond": "Rubble covers the only visible entrance, The en-trance stands before you",
     "exitRooms": [
-      "Hall1: To the north, the entrance yawns open, its destroyed face reminds you of a maw. ",
-      "ChosenGiantRoom: To the north there is a door covered in freezing liquid it is completely frozen solid",
-      "Hall3: To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
-      "GrandHall2: To the south is the hole you fell down. The ladder has retracted up into the ceiling"
+      "Hall1: To the north, the entrance yawns open, its destroyed face reminds you of a maw. "
     ]
   },
   {
@@ -31,7 +25,7 @@
     "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
     "interactions": [
       "Check Bodies#Warily you examine the bodies. They are grotesque to look at, humanoid in shape only. Extending for every orifice are masses of wires, and most of the body is covered by strange shapes and objects you guess to be cybernetic sensors, as well as things of a more obscured pur-pose.",
-      "Continue#The first one you examine is noticeably larger and is in much better condition. Once you examine all of the other bodies you notice that it is no longer there."
+      "Continue#The first one you examine is noticeably larger and is in much better condition. Once you exam-ine all of the other bodies you notice that it is no longer there."
     ],
     "roomMons": "None",
     "roomItem": "IT11",
@@ -43,18 +37,18 @@
   },
   {
     "roomID": "02",
-    "roomTitle": "Hall3",
+    "roomTitle": "Hall2",
     "roomDesc": "Now you can clearly see the Statue. It looms down from the ceiling, and you can feel it watch you. ",
     "interactions": [
-      "Check the Statue#Now once again pass-ing for normal, the horrific statue leers down at you from its perch.",
-      "Check the Carvings#The carvings around the door show a figure overcoming four trials and obtaining four keys, as you touch one of them, the door to your right shoots open. Traces of your target lead behind the door beneath the statue."
+      "Check The Statue#Now once again pass-ing for normal, the horrific statue leers down at you from its perch.",
+      "Check The Carvings#The carvings around the door show a figure overcoming four trials and obtaining four keys, as you touch one of them, the door to your right shoots open. Traces of your target lead behind the door beneath the statue."
     ],
     "roomMons": "None",
     "roomItem": "IT10",
     "roomPuzzle": "None",
     "roomDescSecond": "The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you. Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.",
     "exitRooms": [
-      "PuzzleRoom1: Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
+      "Final Room : Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
     ]
   },
   {
@@ -62,19 +56,36 @@
     "roomTitle": "PuzzleRoom1",
     "roomDesc": "The room before you open in a vast cavernous space, strange wet material drips down from the ceiling.In the center of the room, what appears to be a console blinks in front of you",
     "interactions": [
-      "Interact#On the console you see two pictogram, one resembling fire, one resembling ice and a dial between them. It is currently not pointing to either pictogram. ",
+      "Continue#On the console you see two pictogram, one resembling fire, one resembling ice and a dial between them. It is currently not pointing to either pictogram. ",
       "Fire#TIt is currently pointing to the fire pictogram.",
-      "IceW#It currently points to the ice pictogram"
+      "Ice#It currently points to the ice pictogram"
     ],
     "roomMons": "None",
     "roomItem": "IT10",
-    "roomPuzzle": "Puzzle2",
-    "roomDescSecond": "None",
+    "roomPuzzle": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenSpiderRoom: To the east is a door that appears to be heavily sealed by some unknown mechanism",
-      "ChosenGiantRoom: To the north there is a door covered in freezing liquid it is completely frozen solid",
+      "ChosenGiantRoom: To the north there is a door covered in freezing liquid [it is completely frozen solid",
       "Hall3: To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
       "GrandHall2: To the south is the hole you fell down. The ladder has retracted up into the ceiling"
+    ]
+  },
+  {
+    "roomID": "04",
+    "roomTitle": "PuzzleRoom2",
+    "roomDesc": "This room is dark and cramped, several bodies lie scattered across the ground horrifically maimed and deformed. One of the corpses seems to have grown over a strange weapon.",
+    "interactions": [
+      "Check Corpse: The body looks like it was melted over the weapon, and has since solidified, despite your best efforts you cannot break it free."
+    ],
+    "roomMons": "None",
+    "roomItem": "IT10",
+    "roomPuzzle": "None",
+    "roomDescSecond": "",
+    "exitRooms": [
+      "ItemRoom1: A collapsed roof leads up into a new room.",
+      "ShadowRoom1: Strange whispers emanate from the door to the south",
+      "ChosenRoom: The room to the east is covered in a strange biomatter you scans identify as similar to fungus."
     ]
   }
 ]
