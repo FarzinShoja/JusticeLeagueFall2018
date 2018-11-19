@@ -11,11 +11,13 @@ public class ReadJSonFile {
 
     public Room[] rooms;
     public Item[] items;
+    public Monster[] monsters;
 
     public ReadJSonFile() {
         try {
             readRoomJson();
             readItemJson();
+            readMonsterJson();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -33,6 +35,13 @@ public class ReadJSonFile {
         String str1 = FileUtils.readFileToString(new File("res/Items.json"), StandardCharsets.UTF_8);
         ObjectMapper om1 = new ObjectMapper();
         items = om1.readValue(str1, Item[].class);
+    }
+
+    //This Method Is Responsible for Reading The Monster JSON File, and Returns it in Array
+    public void readMonsterJson() throws Exception {
+        String str1 = FileUtils.readFileToString(new File("res/Monsters.json"), StandardCharsets.UTF_8);
+        ObjectMapper om1 = new ObjectMapper();
+        monsters = om1.readValue(str1, Monster[].class);
     }
 }
 

@@ -5,17 +5,10 @@ public class Player {
     private int playerHealth;
     private int playerMaxHealth;
     private int playerShield;
-    private int playerHeavyDamage;
-    private int playerLowDamage;
     private int playerInfection;
     private String playerMainGun;
     private String playerHeavyWeapon;
     private String playerSideArmWeapon;
-    private boolean playerIsDead;
-
-    public Player() {
-        playerHealth = playerMaxHealth;
-    }
 
     public String getPlayerName() {
         return playerName;
@@ -33,6 +26,14 @@ public class Player {
         this.playerHealth = playerHealth;
     }
 
+    public int getPlayerMaxHealth() {
+        return playerMaxHealth;
+    }
+
+    public void setPlayerMaxHealth(int playerMaxHealth) {
+        this.playerMaxHealth = playerMaxHealth;
+    }
+
     public int getPlayerShield() {
         return playerShield;
     }
@@ -41,20 +42,12 @@ public class Player {
         this.playerShield = playerShield;
     }
 
-    public int getPlayerHeavyDamage() {
-        return playerHeavyDamage;
+    public int getPlayerInfection() {
+        return playerInfection;
     }
 
-    public void setPlayerHeavyDamage(int playerHeavyDamage) {
-        this.playerHeavyDamage = playerHeavyDamage;
-    }
-
-    public int getPlayerLowDamage() {
-        return playerLowDamage;
-    }
-
-    public void setPlayerLowDamage(int playerLowDamage) {
-        this.playerLowDamage = playerLowDamage;
+    public void setPlayerInfection(int playerInfection) {
+        this.playerInfection = playerInfection;
     }
 
     public String getPlayerMainGun() {
@@ -81,42 +74,28 @@ public class Player {
         this.playerSideArmWeapon = playerSideArmWeapon;
     }
 
+    public boolean isAlive() {
+        return playerHealth > 0;
+    }
+
     @Override
     public String toString() {
         return "Player{" +
                 "playerName='" + playerName + '\'' +
                 ", playerHealth=" + playerHealth +
+                ", playerMaxHealth=" + playerMaxHealth +
                 ", playerShield=" + playerShield +
-                ", playerHeavyDamage=" + playerHeavyDamage +
-                ", playerLowDamage=" + playerLowDamage +
+                ", playerInfection=" + playerInfection +
                 ", playerMainGun='" + playerMainGun + '\'' +
                 ", playerHeavyWeapon='" + playerHeavyWeapon + '\'' +
                 ", playerSideArmWeapon='" + playerSideArmWeapon + '\'' +
                 '}';
     }
 
-    public int getPlayerMaxHealth() {
-        return playerMaxHealth;
-    }
-
-    public void setPlayerMaxHealth(int playerMaxHealth) {
-        this.playerMaxHealth = playerMaxHealth;
-    }
-
-    public int getPlayerInfection() {
-        return playerInfection;
-    }
-
-    public void setPlayerInfection(int playerInfection) {
-        this.playerInfection = playerInfection;
-    }
-
-    public boolean isAlive() {
-        return playerHealth > 0;
-    }
-
-    public boolean isDead() {
-        return playerHealth < 0;
+    public boolean isDead(Player player) {
+        if ((player.getPlayerHealth() <= 0) && (player.playerInfection == 100)) {
+            return true;
+        } else return player.getPlayerHealth() <= 0;
     }
 
     public void newPlayerHealth() {
@@ -127,4 +106,14 @@ public class Player {
         playerMaxHealth = 100;
     }
 
+    public void newPlayerSheild() {
+        playerShield = 1;
+    }
+
+    public void newPlayerInfection() {
+        playerInfection = 0;
+    }
+
+    public void newPlayerHeavyWeapon() {
+    }
 }

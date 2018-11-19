@@ -1,6 +1,6 @@
 [
   {
-    "itemID": "00",
+    "itemID": "IT1",
     "itemTitle": "Health Stone",
     "itemDesc": "Mysterious red Stone that emits a red light. When crushed provides healing for + 20 Health.",
     "itemType": "consumable",
@@ -12,10 +12,10 @@
     "itemAmmo": "None"
   },
   {
-    "itemID": "01",
+    "itemID": "IT2",
     "itemTitle": "Force Shield",
     "itemDesc": "A small device that provides a protective shield that allows you to take extra hits. The shield can be manually deployed to completely block hits, but it can only be used if it is charged. ",
-    "itemType": "equipable",
+    "itemType": "equitable",
     "itemEquitable": "true",
     "itemUsable": "false",
     "itemDamage": "0",
@@ -24,7 +24,7 @@
     "itemAmmo": "None"
   },
   {
-    "itemID": "02",
+    "itemID": "IT3",
     "itemTitle": "Force Shield Capsule",
     "itemDesc": "Used to charge the force shield.",
     "itemType": "consumable",
@@ -36,7 +36,7 @@
     "itemAmmo": "3"
   },
   {
-    "itemID": "03",
+    "itemID": "IT4",
     "itemTitle": "Elixir",
     "itemDesc": "This elixir is a strange substance that can be found in the temple. It is the only item that nullify the dangerous effects of your Infection.",
     "itemType": "consumable",
@@ -48,7 +48,7 @@
     "itemAmmo": "None"
   },
   {
-    "itemID": "04",
+    "itemID": "IT5",
     "itemTitle": "Crimson Liquid",
     "itemDesc": "This vile red substance found throughout the temple causes infection to increase by 10. It presents itself in many forms.",
     "itemType": "consumable",
@@ -60,7 +60,7 @@
     "itemAmmo": "None"
   },
   {
-    "itemID": "05",
+    "itemID": "IT6",
     "itemTitle": "Key",
     "itemDesc": "These are your object of obsession within the temple. There are three keys hidden within the temple.",
     "itemType": "key",
@@ -72,7 +72,7 @@
     "itemAmmo": "None"
   },
   {
-    "itemID": "06",
+    "itemID": "IT7",
     "itemTitle": "Extra Vehicular Assault Rifle",
     "itemDesc": "Your main gun that you start with.",
     "itemType": "Main Weapon",
@@ -84,7 +84,7 @@
     "itemAmmo": "24"
   },
   {
-    "itemID": "07",
+    "itemID": "IT8",
     "itemTitle": "The Clyde 15",
     "itemDesc": "This is your side arm that have at the start of the game.",
     "itemType": "Side Arm",
@@ -96,7 +96,7 @@
     "itemAmmo": "99"
   },
   {
-    "itemID": "08",
+    "itemID": "IT9",
     "itemTitle": "Flamethrower",
     "itemDesc": "This is the most powerful weapon in the arsenal that you begin with.",
     "itemType": "Heavy Weapon",
@@ -108,7 +108,7 @@
     "itemAmmo": "3"
   },
   {
-    "itemID": "09",
+    "itemID": "IT10",
     "itemTitle": "Alien Flux Rifle",
     "itemDesc": "This weapon can be found inside the temple. it is slightly stronger than some of your base weapons. It does a damage of 9 however each time you use this weapon your Infection goes up by 12.",
     "itemType": "Main Weapon",
@@ -120,7 +120,7 @@
     "itemAmmo": "99"
   },
   {
-    "itemID": "10",
+    "itemID": "IT11",
     "itemTitle": "Severed Blade",
     "itemDesc": "This weapon is found when killing the Twisted Crawler. The weapon has 7 damage and causes 5+ infection.",
     "itemType": "Side Arm",
@@ -132,7 +132,7 @@
     "itemAmmo": "99"
   },
   {
-    "itemID": "11",
+    "itemID": "IT12",
     "itemTitle": "Atomizer",
     "itemDesc": "This weapon can be found inside the temple it is slightly stronger than some of your base weapons. It does a damage of 14 however each time you use this weapon your Infection goes up by 30.",
     "itemType": "Heavy Weapon",
