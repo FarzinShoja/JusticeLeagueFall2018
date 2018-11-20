@@ -20,12 +20,12 @@ public class Monster {
 
     }
 
-    public static ArrayList extractAllMonsterNames(Monster[] monsters) {
-        ArrayList titleList = new ArrayList();
-        for (int i = 0; i < monsters.length; i++) {
-            titleList.add(monsters[i].getMonsterName());
+    public static ArrayList<String> extractAllMonsterNames(Monster[] monsters) {
+        ArrayList<String> nameList = new ArrayList<>();
+        for (Monster monster : monsters) {
+            nameList.add(monster.getMonsterName());
         }
-        return titleList;
+        return nameList;
     }
 
     public int getMonsterID() {

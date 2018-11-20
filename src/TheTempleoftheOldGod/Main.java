@@ -14,7 +14,10 @@ public class Main {
         Room[] roomsHolder = read.rooms;
         Item i = new Item();
         Item[] itemHolder = read.items;
+        Monster mon = new Monster();
+        Monster[] monsterHolder = read.monsters;
         Inventory inventory = new Inventory();
+        Fight fight = new Fight();
 
         boolean isGameFinished = false;
         int currentRoomID = 0;
@@ -117,7 +120,7 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Fight")) {
                 //code in here need to act with monster class
-
+                fight.playerTurn(r.getRoomMons());
             }
 
             if (userInputString.equalsIgnoreCase("Pickup")) {

@@ -7,7 +7,7 @@ public class Item {
     private String itemTitle;
     private String itemDesc;
     private String itemType;
-    private String itemEquitable;
+    private String itemEquipable;
     private String itemUsable;
     private String itemDamage;
     private String itemHealAmount;
@@ -59,12 +59,12 @@ public class Item {
         this.itemType = itemType;
     }
 
-    public String getitemEquitable() {
-        return itemEquitable;
+    public String getitemEquipable() {
+        return itemEquipable;
     }
 
-    public void setitemEquitable(String itemEquitable) {
-        this.itemEquitable = itemEquitable;
+    public void setitemEquipable(String itemEquipable) {
+        this.itemEquipable = itemEquipable;
     }
 
     public String getItemUsable() {
@@ -114,7 +114,7 @@ public class Item {
                 ", itemTitle='" + itemTitle + '\'' +
                 ", itemDesc='" + itemDesc + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", itemEquitable='" + itemEquitable + '\'' +
+                ", itemEquipable='" + itemEquipable + '\'' +
                 ", itemUsable='" + itemUsable + '\'' +
                 ", itemDamage='" + itemDamage + '\'' +
                 ", itemHealAmount='" + itemHealAmount + '\'' +
@@ -143,11 +143,11 @@ public class Item {
         return s;
     }
 
-    public boolean extractitemEquitable(String currentItemTitle, Item[] items) {
+    public boolean extractitemEquipable(String currentItemTitle, Item[] items) {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquitable());
+                s = Boolean.parseBoolean(items[i].getitemEquipable());
             }
         }
         return s;
@@ -157,7 +157,7 @@ public class Item {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquitable());
+                s = Boolean.parseBoolean(items[i].getitemEquipable());
             }
         }
         return s;
