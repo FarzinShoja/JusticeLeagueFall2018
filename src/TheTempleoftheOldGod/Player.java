@@ -1,15 +1,22 @@
 package TheTempleoftheOldGod;
 
+import java.util.ArrayList;
+
 public class Player {
     private String playerName;
     private int playerHealth;
-    private int playerMaxHealth;
     private int playerShield;
     private int playerInfection;
-    private String playerMainGun;
-    private String playerHeavyWeapon;
-    private String playerSideArmWeapon;
+    private ArrayList<String> playerMainGun;
+    private ArrayList<String> playerHeavyWeapon;
+    private ArrayList<String> playerSideArmWeapon;
+    private boolean isAlive = true;
 
+    public Player() {
+        this.playerHealth = 50;
+        this.playerInfection = 0;
+        this.playerShield = 1;
+    }
     public String getPlayerName() {
         return playerName;
     }
@@ -26,13 +33,6 @@ public class Player {
         this.playerHealth = playerHealth;
     }
 
-    public int getPlayerMaxHealth() {
-        return playerMaxHealth;
-    }
-
-    public void setPlayerMaxHealth(int playerMaxHealth) {
-        this.playerMaxHealth = playerMaxHealth;
-    }
 
     public int getPlayerShield() {
         return playerShield;
@@ -50,70 +50,76 @@ public class Player {
         this.playerInfection = playerInfection;
     }
 
-    public String getPlayerMainGun() {
+    public ArrayList<String> getPlayerMainGun() {
         return playerMainGun;
     }
 
-    public void setPlayerMainGun(String playerMainGun) {
+    public void setPlayerMainGun(ArrayList<String> playerMainGun) {
         this.playerMainGun = playerMainGun;
     }
 
-    public String getPlayerHeavyWeapon() {
+    public ArrayList<String> getPlayerHeavyWeapon() {
         return playerHeavyWeapon;
     }
 
-    public void setPlayerHeavyWeapon(String playerHeavyWeapon) {
+    public void setPlayerHeavyWeapon(ArrayList<String> playerHeavyWeapon) {
         this.playerHeavyWeapon = playerHeavyWeapon;
     }
 
-    public String getPlayerSideArmWeapon() {
+    public ArrayList<String> getPlayerSideArmWeapon() {
         return playerSideArmWeapon;
     }
 
-    public void setPlayerSideArmWeapon(String playerSideArmWeapon) {
+    public void setPlayerSideArmWeapon(ArrayList<String> playerSideArmWeapon) {
         this.playerSideArmWeapon = playerSideArmWeapon;
     }
 
-    public boolean isAlive() {
-        return playerHealth > 0;
-    }
 
     @Override
     public String toString() {
         return "Player{" +
                 "playerName='" + playerName + '\'' +
                 ", playerHealth=" + playerHealth +
-                ", playerMaxHealth=" + playerMaxHealth +
                 ", playerShield=" + playerShield +
                 ", playerInfection=" + playerInfection +
-                ", playerMainGun='" + playerMainGun + '\'' +
-                ", playerHeavyWeapon='" + playerHeavyWeapon + '\'' +
-                ", playerSideArmWeapon='" + playerSideArmWeapon + '\'' +
+                ", playerMainGun=" + playerMainGun +
+                ", playerHeavyWeapon=" + playerHeavyWeapon +
+                ", playerSideArmWeapon=" + playerSideArmWeapon +
                 '}';
     }
 
-    public boolean isDead(Player player) {
-        if ((player.getPlayerHealth() <= 0) && (player.playerInfection == 100)) {
-            return true;
-        } else return player.getPlayerHealth() <= 0;
+    public void isDead(Player player) {
+        if ((player.getPlayerHealth() <= 0) || (player.playerInfection == 100)) {
+            isAlive = false;
+        }
     }
 
-    public void newPlayerHealth() {
-        playerHealth = 50;
-    }
+    public void usedConsumable(String str) {
+        String[] parts = str.split("#");
+        String part1 = parts[0];
+        String part2 = parts[1];
+        if (part1.equals("H")) {
+            playerHealth += Integer.parseInt(part2);
+            if (playerHealth > 100) {
+                playerHealth = 100;
+            }
+            System.out.println("The Player Health Is Now :" + playerHealth);
+        }
 
-    public void newPlayerMaxHealth() {
-        playerMaxHealth = 100;
-    }
+        if (part1.equals("I")) {
+            playerInfection += Integer.parseInt(part2);
+            if (playerInfection < 0) {
+                playerInfection = 0;
+            }
+            if (playerInfection >= 100) {
+                isAlive = false;
+            }
+            System.out.println("The Player Infection Is Now :" + playerInfection);
+        }
+        if (part1.equals("S")) {
+            playerShield += Integer.parseInt(part2);
+            System.out.println("The Player Shield Charges Is Now at:" + playerShield);
+        }
 
-    public void newPlayerSheild() {
-        playerShield = 1;
-    }
-
-    public void newPlayerInfection() {
-        playerInfection = 0;
-    }
-
-    public void newPlayerHeavyWeapon() {
     }
 }

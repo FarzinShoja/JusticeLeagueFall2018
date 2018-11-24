@@ -11,8 +11,8 @@
       "Fire#the missiles into the rubble, clearing the way into the Temple"
 
     ],
-    "roomMons": "None",
-    "roomItem": "IT10",
+    "roomMons": "ChosenSpider",
+    "roomItem": "IT3",
     "roomPuzzle": "None",
     "roomDescSecond": "Rubble covers the only visible entrance, The en-trance stands before you",
     "exitRooms": [

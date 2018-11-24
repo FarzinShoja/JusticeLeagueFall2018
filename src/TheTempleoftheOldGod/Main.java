@@ -1,7 +1,7 @@
 package TheTempleoftheOldGod;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -14,15 +14,33 @@ public class Main {
         Room[] roomsHolder = read.rooms;
         Item i = new Item();
         Item[] itemHolder = read.items;
-        Monster mon = new Monster();
-        Monster[] monsterHolder = read.monsters;
         Inventory inventory = new Inventory();
-        Fight fight = new Fight();
+        Monster enemey = new Monster();
+        Monster[] monsterHolder = read.monsters;
+        Player player = new Player();
+
 
         boolean isGameFinished = false;
+
+
+        Map<String, Boolean> itemPickedUp = new LinkedHashMap<>();
+        Map<String, Boolean> monsterIsDead = new LinkedHashMap<>();
+
+        for (int y = 0; y < roomsHolder.length; y++) {
+            if (!roomsHolder[y].getRoomItem().equals("None")) {
+                itemPickedUp.put(roomsHolder[y].getRoomTitle(), false);
+            }
+        }
+
+        for (int y = 0; y < roomsHolder.length; y++) {
+            if (!roomsHolder[y].getRoomMons().equals("None")) {
+                monsterIsDead.put(roomsHolder[y].getRoomTitle(), false);
+            }
+        }
+
         int currentRoomID = 0;
         String currentRoomTitle = " ";
-        boolean roomDes = false;
+
 
         System.out.println(" ");
         System.out.println("------------------ Welcome to The Temple of the OLd God ------------");
@@ -41,6 +59,8 @@ public class Main {
             if (userInputString.equalsIgnoreCase("StartGame")) {
                 currentRoomID = 00;
                 currentRoomTitle = r.currentRoomTitle(currentRoomID, roomsHolder);
+                inventory.setDefults(itemHolder);
+
                 System.out.println("Welcome to " + currentRoomTitle + " Room" +
                         "\nRoom Description: " + r.extractRoomDesc(currentRoomTitle, roomsHolder));
                 System.out.println("\nType Interact to continue");
@@ -75,8 +95,47 @@ public class Main {
             }
 
             if (userInputString.equalsIgnoreCase("Check Inventory")) {
-                inventory.checkInventory();
+                String inventoryListener;
+                while (true) {
+                    inventory.checkInventory();
+                    System.out.println("Type Equip to Equip a Weapon, Type Consume to use an Item, Type Exit Inventory to Exit ");
+                    inventoryListener = (userInputScanner.nextLine());
+                    if (inventoryListener.equalsIgnoreCase("Equip")) {
+                        System.out.println("Which Weapon Would You Like To Equip, Use the Item ID");
+                        String itemToEquip = "";
+                        while (true) {
+                            itemToEquip = (userInputScanner).nextLine();
+                            if (inventory.getInventoryMap().containsKey(itemToEquip)) {
+                                inventory.setEqupped(itemToEquip, itemHolder);
+                                System.out.println("You have Successfully Equip Weapon");
+                                break;
+                            } else {
+                                System.out.println("Try Typing the Item ID Again Exactly How It Is");
+                            }
+                        }
+                    }
+
+                    if (inventoryListener.equalsIgnoreCase("Consume")) {
+                        System.out.println("Which Item Would You Like To Consume, Use the Item ID");
+                        String itemToConsume = "";
+                        while (true) {
+                            itemToConsume = (userInputScanner).nextLine();
+                            if (inventory.getInventoryMap().containsKey(itemToConsume)) {
+                                player.usedConsumable(inventory.useConsumable(itemToConsume, itemHolder));
+                                System.out.println("You have Successfully Consumed This Item");
+                                break;
+                            } else {
+                                System.out.println("Try Typing the Item ID Again Exactly How It Is");
+                            }
+                        }
+                    }
+                    if (inventoryListener.equalsIgnoreCase("Exit Inventory")) {
+                        break;
+                    }
+                }
             }
+
+
             if (userInputString.equalsIgnoreCase("Drop Item")) {
                 inventory.checkInventoryForDrop();
                 System.out.println("Type the Item ID to remove it from inventory, if you changed yor mind Type Skip");
@@ -103,7 +162,7 @@ public class Main {
                     System.out.println(" You Have to Battle " + r.extractRoomMonster(currentRoomTitle, roomsHolder) + " Type Fight to Begin ");
                     ex = true;
                 }
-                if (!r.extractRoomItem(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
+                if (!r.extractRoomItem(currentRoomTitle, roomsHolder).equalsIgnoreCase("None") && itemPickedUp.get(currentRoomTitle) == false) {
                     System.out.println("Type Pickup to add The " + r.extractRoomItem(currentRoomTitle, roomsHolder) + " to Inventory, or Type Skip ");
                     ex = true;
                 }
@@ -120,13 +179,27 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Fight")) {
                 //code in here need to act with monster class
-                fight.playerTurn(r.getRoomMons());
+                System.out.println("You are about to fight " + "\n" + enemey.extractMonsterName(currentRoomTitle, monsterHolder) +
+                        "\n Description:  " + enemey.extractMonsterDesc(currentRoomTitle, monsterHolder)
+                        + "\n Monster health:  " + enemey.extractMonsterHealth(currentRoomTitle, monsterHolder));
+                System.out.println("Now you Know who you fighting against type Begin to start");
+                String sBegin;
+                while (true) {
+                    sBegin = (userInputScanner.nextLine());
+                    if (sBegin.equalsIgnoreCase("Begin")) {
+                        //Start Fight
+                        System.out.println("You are about to fight " + "\n" + enemey.extractMonsterName(currentRoomTitle, monsterHolder));
+                        break;
+                    }
+                }
+
             }
 
-            if (userInputString.equalsIgnoreCase("Pickup")) {
+            if (userInputString.equalsIgnoreCase("Pickup") && itemPickedUp.get(currentRoomTitle) == false) {
                 //code in here need to act with item class
                 String itemID = r.extractRoomItem(currentRoomTitle, roomsHolder);
                 inventory.addToInventory(itemID, itemHolder);
+                itemPickedUp.put(currentRoomTitle, true);
             } else if (userInputString.equalsIgnoreCase("Skip")) {
                 System.out.println("You Didn't add the Item to Your Inventory Type ExitRoom to show the Available Exits");
             } else {

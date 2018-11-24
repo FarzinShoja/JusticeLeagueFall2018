@@ -7,12 +7,12 @@ public class Item {
     private String itemTitle;
     private String itemDesc;
     private String itemType;
-    private String itemEquipable;
+    private String itemEquippable;
     private String itemUsable;
     private String itemDamage;
     private String itemHealAmount;
     private String itemInfectionAmount;
-    private int itemAmmo;
+    private String itemAmmo;
 
     public static ArrayList<String> extractAllItemTitles(Item[] items) {
         ArrayList<String> titleList = new ArrayList<>();
@@ -59,12 +59,12 @@ public class Item {
         this.itemType = itemType;
     }
 
-    public String getitemEquipable() {
-        return itemEquipable;
+    public String getitemEquippable() {
+        return itemEquippable;
     }
 
-    public void setitemEquipable(String itemEquipable) {
-        this.itemEquipable = itemEquipable;
+    public void setitemEquippable(String itemEquippable) {
+        this.itemEquippable = itemEquippable;
     }
 
     public String getItemUsable() {
@@ -99,11 +99,11 @@ public class Item {
         this.itemInfectionAmount = itemInfectionAmount;
     }
 
-    public int getItemAmmo() {
+    public String getItemAmmo() {
         return itemAmmo;
     }
 
-    public void setItemAmmo(int itemAmmo) {
+    public void setItemAmmo(String itemAmmo) {
         this.itemAmmo = itemAmmo;
     }
 
@@ -114,7 +114,7 @@ public class Item {
                 ", itemTitle='" + itemTitle + '\'' +
                 ", itemDesc='" + itemDesc + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", itemEquipable='" + itemEquipable + '\'' +
+                ", itemEquippable='" + itemEquippable + '\'' +
                 ", itemUsable='" + itemUsable + '\'' +
                 ", itemDamage='" + itemDamage + '\'' +
                 ", itemHealAmount='" + itemHealAmount + '\'' +
@@ -143,11 +143,11 @@ public class Item {
         return s;
     }
 
-    public boolean extractitemEquipable(String currentItemTitle, Item[] items) {
+    public boolean extractitemEquippable(String currentItemTitle, Item[] items) {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquipable());
+                s = Boolean.parseBoolean(items[i].getitemEquippable());
             }
         }
         return s;
@@ -157,7 +157,7 @@ public class Item {
         boolean s = true;
         for (int i = 0; i < items.length; i++) {
             if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquipable());
+                s = Boolean.parseBoolean(items[i].getitemEquippable());
             }
         }
         return s;
@@ -174,40 +174,6 @@ public class Item {
         return s;
     }
 
-    public int extractItemHealAmount(String currentItemTitle, Item[] items) {
-        int s = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Integer.parseInt(items[i].getItemHealAmount());
-            }
-
-        }
-        return s;
-    }
-
-    public int extractInfectionAmount(String currentItemTitle, Item[] items) {
-        int s = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Integer.parseInt(items[i].getItemInfectionAmount());
-            }
-
-        }
-        return s;
-    }
-
-    public int extractItemAmmo(String currentItemTitle, Item[] items) {
-        int s = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = items[i].getItemAmmo();
-            }
-
-        }
-        return s;
-    }
-
-
     public String extractCurrentItemTitle(String itemID, Item[] items) {
         String s = "";
         for (int i = 0; i < items.length; i++) {
@@ -219,5 +185,6 @@ public class Item {
         }
         return s;
     }
+
 
 }
