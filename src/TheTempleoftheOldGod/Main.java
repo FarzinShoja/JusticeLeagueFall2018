@@ -18,6 +18,8 @@ public class Main {
         Monster enemey = new Monster();
         Monster[] monsterHolder = read.monsters;
         Player player = new Player();
+        Puzzle p = new Puzzle();
+        Puzzle[] puzzleHolder = read.puzzles;
 
 
         boolean isGameFinished = false;
@@ -40,7 +42,7 @@ public class Main {
 
         int currentRoomID = 0;
         String currentRoomTitle = " ";
-
+        String currentRoomPuzzle = " ";
 
         System.out.println(" ");
         System.out.println("------------------ Welcome to The Temple of the OLd God ------------");
@@ -60,7 +62,8 @@ public class Main {
                 currentRoomID = 00;
                 currentRoomTitle = r.currentRoomTitle(currentRoomID, roomsHolder);
                 inventory.setDefults(itemHolder);
-
+                currentRoomPuzzle = "Rubble";
+                currentRoomTitle = r.currentRoomTitle(currentRoomID, roomsHolder);
                 System.out.println("Welcome to " + currentRoomTitle + " Room" +
                         "\nRoom Description: " + r.extractRoomDesc(currentRoomTitle, roomsHolder));
                 System.out.println("\nType Interact to continue");
@@ -208,9 +211,26 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {
                 //code in here need to act with puzzle class
-                System.out.println(Arrays.toString(itemHolder));
-                System.out.println("------" + Arrays.toString(roomsHolder));
+                p.extractPuzzleInter(currentRoomPuzzle, puzzleHolder);
+                String qInteraction = "";
+
+                for (Map.Entry<String, String> m : p.getInteractionMap().entrySet()) {
+                    System.out.println(m.getKey());
+
+                    while (true) {
+                        qInteraction = (userInputScanner.nextLine());
+                        if (r.getInteractionMap().containsKey(qInteraction)) {
+                            System.out.println(p.getInteractionMap().get(qInteraction));
+                            // r.interactionMap.remove(sInteraction);
+                            break;
+                        } else {
+                            System.out.println("Try again.... , Try Typing the Exactly How it Shows");
+                            System.out.println(m.getKey());
+                        }
+                    }
+                }
             }
+
             //User Will Use This Command to Get The Exit Rooms
             if (userInputString.equalsIgnoreCase("ExitRoom")) {
                 r.extractExitRooms(currentRoomTitle, roomsHolder);
