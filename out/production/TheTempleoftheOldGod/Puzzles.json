@@ -1,0 +1,70 @@
+[
+  {
+    "puzzleID": "00",
+    "puzzleName": "Rubble",
+    "puzzleRoom": "Outside",
+    "puzzleItem": "None",
+    "interactions": [
+      "Check Rubble#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
+      "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded.",
+      "Fire#The missiles into the rubble, clearing the way into the Temple"
+    ]},
+  {
+    "puzzleID": "01",
+    "puzzleName": "Pictogram",
+    "puzzleRoom": "PuzzleRoom1",
+    "puzzleItem": "None",
+    "interactions": [
+      "Check Console#On the console you see two pictograms, one resembling fire, one resembling ice and a dial between them. [It is currently not pointing to the either pictogram].",
+      "Choose Fire#It is currently pointing to the fire pictogram. Exit1 opens.",
+      "Choose Ice#It is currently pointing to the ice pictogram. Exit2 opens."
+    ]},
+  {
+    "puzzleID": "02",
+    "puzzleName": "Melted",
+    "puzzleRoom": "PuzzleRoom2",
+    "puzzleItem": "Alien Flux Rifle",
+    "interactions": [
+      "Check Corpse#The body looks like it was melted over the weapon, and has since solidified, despite you best efforts you cannot break it free.",
+      "Use Flamethrower#The body has been burned away from the weapon."
+    ]},
+  {
+    "puzzleID": "03",
+    "puzzleName": "Password",
+    "puzzleRoom": "PuzzleRoom3",
+    "puzzleItem": "None",
+    "interactions": [
+      "Check Box#The box seems to be able to be open, but is being held shut with a device on it.",
+      "Check Device#It is covered in strange sym-bols[you don’t understand, perhaps if you knew the lan-guage, you could unlock the box]",
+      "Interact#The message says “Within me is a great artifact of our Most Holy, prove you Worth by answering this question, “What is the Esteemed name of the Great One’s Servants?”",
+      "Chosen#They are called “Chosen”"
+    ]},
+  {
+    "puzzleID": "04",
+    "puzzleName": "Binary",
+    "puzzleRoom": "PuzzleRoom4",
+    "puzzleItem": "None",
+    "interactions": [
+      "Check Computer#As you approach the computer, broken text in you own lan-guage appears on the monitor “Prove you are worthy to hear the words of the Greatest One”",
+      "Interact#Numbers arise on the screen, they appear to be binary “0101, 1010, 0110, “Input the correct number in base 10”"
+    ]},
+  {
+    "puzzleID": "05",
+    "puzzleName": "Carving",
+    "puzzleRoom": "GrandHall2",
+    "puzzleItem": "None",
+    "interactions": [
+      "Check Carving#"
+    ]},
+  {
+    "puzzleID": "06",
+    "puzzleName": "Rubble",
+    "puzzleRoom": "Outside",
+    "puzzleItem": "None",
+    "interactions": [
+      "Accept Challenge#the Structure A quick jog around the structure reveals no other en-trance besides the one that has caved in",
+      "Brave Through#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
+      "Question#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded."
+    ]}
+
+]

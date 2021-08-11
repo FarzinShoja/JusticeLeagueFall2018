@@ -1,7 +1,6 @@
 package TheTempleoftheOldGod;
 
 
-
 public class Monster {
 
 
@@ -39,14 +38,6 @@ public class Monster {
 
     public void setMonsterName(String monsterName) {
         this.monsterName = monsterName;
-    }
-
-    public String getmonsterSecondName() {
-        return monsterSecondName;
-    }
-
-    public void setmonsterSecondName(String monsterSecondName) {
-        this.monsterSecondName = monsterSecondName;
     }
 
     public String getMonsterDesc() {
@@ -87,14 +78,6 @@ public class Monster {
 
     public void setMonsterLightDmg(int monsterLightDmg) {
         this.monsterLightDmg = monsterLightDmg;
-    }
-
-    public String getmonsterLightDesc() {
-        return monsterLightDesc;
-    }
-
-    public void setmonsterLightDesc(String monsterLightDesc) {
-        this.monsterLightDesc = monsterLightDesc;
     }
 
     public int getMonsterHeavyDmg() {
@@ -171,7 +154,7 @@ public class Monster {
         String s = "";
         for (int i = 0; i < monsters.length; i++) {
             if (currentMonsterRoom.equalsIgnoreCase(monsters[i].getMonsterRoom())) {
-                s = monsters[i].getmonsterSecondName();
+                s = monsters[i].getMonsterSecondName();
             }
         }
         return s;
@@ -208,11 +191,11 @@ public class Monster {
         return s;
     }
 
-    public String extractmonsterLightDesc(String currentMonsterName, Monster[] monsters) {
+    public String extractMonsterLightDesc(String currentMonsterName, Monster[] monsters) {
         String s = "";
         for (int i = 0; i < monsters.length; i++) {
             if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getmonsterLightDesc();
+                s = monsters[i].getMonsterLightDesc();
             }
         }
         return s;

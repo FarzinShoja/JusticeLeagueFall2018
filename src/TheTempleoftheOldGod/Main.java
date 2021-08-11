@@ -1,6 +1,5 @@
 package TheTempleoftheOldGod;
 
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -12,10 +11,9 @@ public class Main {
         ReadJSonFile read = new ReadJSonFile();
         Room r = new Room();
         Room[] roomsHolder = read.rooms;
-        Item i = new Item();
         Item[] itemHolder = read.items;
         Inventory inventory = new Inventory();
-        Monster enemey = new Monster();
+        Monster enemy = new Monster();
         Monster[] monsterHolder = read.monsters;
         Player player = new Player();
         Puzzle p = new Puzzle();
@@ -54,12 +52,12 @@ public class Main {
 
         Scanner userInputScanner = new Scanner(System.in);
 
-        while (isGameFinished != true) {
+        while (!isGameFinished) {
             System.out.println("UserInputRequired:  ");
             String userInputString = userInputScanner.nextLine();
 
             if (userInputString.equalsIgnoreCase("StartGame")) {
-                currentRoomID = 00;
+                currentRoomID = 0;
                 currentRoomTitle = r.currentRoomTitle(currentRoomID, roomsHolder);
                 inventory.setDefults(itemHolder);
                 currentRoomPuzzle = "Rubble";
@@ -90,11 +88,10 @@ public class Main {
                 }
                 if (r.extractRoomDescSecond(currentRoomTitle, roomsHolder).equalsIgnoreCase("None")) {
                     //Do Nothing
-                    System.out.println("Type Examine room took look for Monsters/Items/Puzzle ");
                 } else {
                     System.out.println("..... " + r.extractRoomDescSecond(currentRoomTitle, roomsHolder));
-                    System.out.println("Type Examine room took look for Monsters/Items/Puzzle ");
                 }
+                System.out.println("Type Examine room took look for Monsters/Items/Puzzle ");
             }
 
             if (userInputString.equalsIgnoreCase("Check Inventory")) {
@@ -174,7 +171,7 @@ public class Main {
                     System.out.println("Type Solve to Interact With Puzzle ");
                     ex = true;
                 }
-                if (ex == false) {
+                if (!ex) {
                     System.out.println("There Is Nothing In This Room, Type ExitRoom to view The Available Exits");
                 }
             }
@@ -182,16 +179,16 @@ public class Main {
 
             if (userInputString.equalsIgnoreCase("Fight")) {
                 //code in here need to act with monster class
-                System.out.println("You are about to fight " + "\n" + enemey.extractMonsterName(currentRoomTitle, monsterHolder) +
-                        "\n Description:  " + enemey.extractMonsterDesc(currentRoomTitle, monsterHolder)
-                        + "\n Monster health:  " + enemey.extractMonsterHealth(currentRoomTitle, monsterHolder));
+                System.out.println("You are about to fight " + "\n" + enemy.extractMonsterName(currentRoomTitle, monsterHolder) +
+                        "\n Description:  " + enemy.extractMonsterDesc(currentRoomTitle, monsterHolder)
+                        + "\n Monster health:  " + enemy.extractMonsterHealth(currentRoomTitle, monsterHolder));
                 System.out.println("Now you Know who you fighting against type Begin to start");
                 String sBegin;
                 while (true) {
                     sBegin = (userInputScanner.nextLine());
                     if (sBegin.equalsIgnoreCase("Begin")) {
                         //Start Fight
-                        System.out.println("You are about to fight " + "\n" + enemey.extractMonsterName(currentRoomTitle, monsterHolder));
+                        System.out.println("You are about to fight " + "\n" + enemy.extractMonsterName(currentRoomTitle, monsterHolder));
                         break;
                     }
                 }
@@ -206,7 +203,7 @@ public class Main {
             } else if (userInputString.equalsIgnoreCase("Skip")) {
                 System.out.println("You Didn't add the Item to Your Inventory Type ExitRoom to show the Available Exits");
             } else {
-                //Do Nothings
+                //Do Nothing
             }
 
             if (userInputString.equalsIgnoreCase("Puzzle")) {

@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Fight {
 
     public String currentHeavyWeapon = player.getPlayerHeavyWeapon();
-    Monster monster;
-    Player player = new Player();
+    Monster;
+    Player = new Player();
 
     private int monsterHealth = 45;
 
@@ -19,9 +19,9 @@ public class Fight {
 
     public void Fight() {
 
-    }
+
     public String currentSideArmWeapon = player.getPlayerSideArmWeapon();
-    Item item = new Item();
+    Item = new Item();
     Room room = new Room();
 
     
@@ -60,7 +60,7 @@ The monster loses the amount of health that the weapon deals, then the player tu
             isPlayerTurn = false;
         }
 
-    }
+
 
     */
 /*Monster turn: 1 or 2 is randomly generated, whatever is generated corresponds to the type of
@@ -68,13 +68,13 @@ The monster loses the amount of health that the weapon deals, then the player tu
      *//*
 
     public void monsterTurn() {
-        Random random = new Random();
+        Random = new Random();
         int attackChance = random.nextInt(1 - 2);
         boolean isMonsterTurn = true;
         while (isMonsterTurn == true) {
             if (attackChance == 1) {
                 playerHealth -= monster.getMonsterLightDmg();
-                System.out.println(monster.getmonsterLightDesc());
+                System.out.println(monster.getMonsterLightDesc());
                 System.out.println(monster.getMonsterName() + " hit you for " + monster.getMonsterLightDmg());
             } else if (attackChance == 2) {
                 playerTurn();

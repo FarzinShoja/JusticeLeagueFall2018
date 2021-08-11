@@ -1,6 +1,9 @@
 package TheTempleoftheOldGod;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class Room {
 
@@ -15,7 +18,6 @@ public class Room {
     private String roomMons;
     private String roomPuzzle;
     private String[] exitRooms;
-
 
 
     public Room() {
@@ -121,6 +123,11 @@ public class Room {
         return exitRoomMap;
     }
 
+    public void setExitRoomMap(Map<String, String> exitroomMap) {
+
+        this.exitRoomMap = exitroomMap;
+    }
+
     @Override
     public String toString() {
         return "Room{" +
@@ -138,11 +145,6 @@ public class Room {
                 '}';
     }
 
-    public void setExitRoomMap(Map<String, String> exitroomMap) {
-
-        this.exitRoomMap = exitroomMap;
-    }
-
     public ArrayList extractAllRoomTitles(String currentRoomTitle, Room[] rooms) {
         ArrayList titleList = new ArrayList();
         for (int i = 0; i < rooms.length; i++) {
@@ -150,7 +152,6 @@ public class Room {
         }
         return titleList;
     }
-
 
 
     public String extractRoomDesc(String currentRoomTitle, Room[] rooms) {

@@ -2,11 +2,8 @@ package TheTempleoftheOldGod;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.io.File;
-import java.io.FileReader;
 import java.nio.charset.StandardCharsets;
 
 

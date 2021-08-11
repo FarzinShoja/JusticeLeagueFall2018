@@ -4,7 +4,7 @@
     "monsterName": "ChosenSpider",
     "monsterSecondName": "The Twisted Crawler",
     "monsterDesc": "You look above you towards the clinking sound. Staring down at you with dozens of blazing red eyes is a monstrosity beyond imagining.The monster seemed to have once been humanoid, but has been twisted, with four sharpened legs haphazardly grafted onto its wizened form. Its head is covered entirely in eyes. As it screams its joy at your arrival, its mouth rattles about disturbingly, as if completely separate from the rest of the head.",
-    "monsterRoom": "Outside",
+    "monsterRoom": "ChosenSpiderRoom",
     "monsterItem": "Severed Blade",
     "monsterHealth": "15",
     "monsterLightDmg": "3",

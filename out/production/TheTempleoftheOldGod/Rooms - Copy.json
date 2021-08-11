@@ -7,12 +7,13 @@
       "Look Around#the Structure A quick jog around the structure reveals no other en-trance besides the one that has caved in",
 
       "Check Rubble#The debris that blocks your path is strange, beneath the metal and stone you swear something is moving. A good explosion should clear the path for you.",
-      "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded."
+      "Check Ship#Your ship is still mostly functional, you could leave at any time, and you feel strangely eager to do so. The Ships missile systems are locked and loaded.",
+      "Fire#the missiles into the rubble, clearing the way into the Temple"
 
     ],
     "roomMons": "None",
     "roomItem": "None",
-    "roomPuzzle": "None",
+    "roomPuzzle": "Puzzle1",
     "roomDescSecond": "Rubble covers the only visible entrance, The en-trance stands before you",
     "exitRooms": [
       "Hall1: To the north, the entrance yawns open, its destroyed face reminds you of a maw. "
@@ -23,13 +24,13 @@
     "roomTitle": "Hall1",
     "roomDesc": "As you approach you recognize the obstacles as pews. In them are [6][5] bodies of some alien race you’ve never seen before.",
     "interactions": [
-      "Check Bodies#Warily you examine the bodies. They are grotesque to look at, humanoid in shape only. Extending for every orifice are masses of wires, and most of the body is covered by strange shapes and objects you guess to be cybernetic sensors, as well as things of a more obscured purpose.",
+      "Check Bodies#Warily you examine the bodies. They are grotesque to look at, humanoid in shape only. Extending for every orifice are masses of wires, and most of the body is covered by strange shapes and objects you guess to be cybernetic sensors, as well as things of a more obscured pur-pose.",
       "Continue#The first one you examine is noticeably larger and is in much better condition. Once you exam-ine all of the other bodies you notice that it is no longer there."
     ],
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": " ",
     "exitRooms": [
       "Hall2: As you move further into the hall, your nausea worsens, and it becomes hard to look away from the Great Statue."
     ]
@@ -45,75 +46,77 @@
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "The nauseous feeling you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you. Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.",
+    "roomDescSecond": "The nauseous feel-ing you have has become almost un-bearable, and your eyes seem to flicker and static. They can only focus on the Great Thing above you. Beneath it is a door. The Carvings around it flare to life with a sickly blue glow.",
     "exitRooms": [
-      "Hallway: Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
-
+      "Final Room : Beneath the Statue a doorway beckons you, though the way is locked by a complicated mechanism."
     ]
   },
   {
     "roomID": "03",
-    "roomTitle": "Hallway",
+    "roomTitle": "PuzzleRoom1",
     "roomDesc": "The room before you open in a vast cavernous space, strange wet material drips down from the ceiling.In the center of the room, what appears to be a console blinks in front of you",
     "interactions": [
-      "Continue#There is Nothing to Interact With in this room"
+      "Continue#On the console you see two pictogram, one resembling fire, one resembling ice and a dial between them. It is currently not pointing to either pictogram. ",
+      "Fire#TIt is currently pointing to the fire pictogram.",
+      "Ice#It currently points to the ice pictogram"
     ],
     "roomMons": "None",
     "roomItem": "IT10",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenSpiderRoom: To the east is a door that appears to be heavily sealed by some unknown mechanism",
       "ChosenGiantRoom: To the north there is a door covered in freezing liquid [it is completely frozen solid",
       "Hall3: To the south is a door, steam vents from pipes all around it. The vents are blasting steam in front of the door.",
-      "PuzzleRoom1: To the west is the hole you fell down. The ladder has retracted up into the ceiling"
+      "GrandHall2: To the south is the hole you fell down. The ladder has retracted up into the ceiling"
     ]
   },
   {
     "roomID": "04",
-    "roomTitle": "PuzzleRoom1",
+    "roomTitle": "PuzzleRoom2",
     "roomDesc": "This room is dark and cramped, several bodies lie scattered across the ground horrifically maimed and deformed. One of the corpses seems to have grown over a strange weapon.",
     "interactions": [
-      "Check Corpse#The body looks like it was melted over the weapon, and has since solidified, despite your best efforts you cannot break it free."
+      "Check Corpse: The body looks like it was melted over the weapon, and has since solidified, despite your best efforts you cannot break it free."
     ],
     "roomMons": "None",
     "roomItem": "IT10",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
-      "PuzzleRoom2: A collapsed roof leads up into a new room.",
+      "ItemRoom1: A collapsed roof leads up into a new room.",
       "ShadowRoom1: Strange whispers emanate from the door to the south",
-      "ChosenRoom: The room to the east is covered in a strange bio matter you scans identify as similar to fungus."
+      "ChosenRoom: The room to the east is covered in a strange biomatter you scans identify as similar to fungus."
     ]
   },
   {
     "roomID": "05",
-    "roomTitle": "PuzzleRoom2",
+    "roomTitle": "PuzzleRoom3",
     "roomDesc": "This room is strangely opulent, the usual dull surfaces of the strange metal shine and gleam in the room brilliant lighting.A strange metal box stand alone in the center.",
     "interactions": [
       "Check Metal Box#The box seems to be able to be open, but is being held shut with a device on it",
-      "Check Device#It is covered in strange symbols (you don’t understand)"
+      "Check Device#It is covered in strange symbols (you don’t understand)",
+      "Chosen#"
     ],
     "roomMons": "None",
     "roomItem": "IT12",
-    "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomPuzzle": "",
+    "roomDescSecond": "",
     "exitRooms": [
-      "PuzzleRoom3: The gateway behind you stand, glimmering in the strong light"
+      "PuzzleRoom4: The gateway behind you stand, glimmering in the strong light"
     ]
   },
   {
     "roomID": "06",
-    "roomTitle": "PuzzleRoom3",
+    "roomTitle": "PuzzleRoom4",
     "roomDesc": "This area seems worshipful, with an altar like the one in the Grand Hall sitting before what seems to be a computer.",
     "interactions": [
       "Check Computer#As you approach the computer, broken text in your own language appears on the monitor “Prove you are worthy to hear the words of the Greatest One” ",
-      "Interact With Computer# Oh No Computers"
+      "Interact With Computer#Numbers arise on the screen, they appear to be binary 0101, 1010, 0110, Input the correct number in base 10"
     ],
     "roomMons": "None",
-    "roomItem": "IT13 ",
+    "roomItem": "Chosen Language Comprehension ",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenSpiderRoom: The Doorway behind you shines in the bright light. "
     ]
@@ -128,7 +131,7 @@
     "roomMons": "Chosen Spider",
     "roomItem": "IT11",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "Tunnel1: Beneath a copious amount of webbing, a small tunnel leads deep into the ground ",
       "ShadowRoom1: to the left of the door you entered Cautiously you ad-vance through the doorway",
@@ -146,9 +149,9 @@
     "roomMons": "None",
     "roomItem": "IT3",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
-      "ShadowRoom1: The tunnel lead back up the Crawler’s nest"
+      "ChosenSpiderRoom: The tunnel lead back up the Crawler’s nest"
     ]
   },
   {
@@ -163,9 +166,9 @@
     "roomMons": "None",
     "roomItem": "IT5",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
-      "ItemsRoom1: To the north a iris door sweeps open as you approach",
+      "PuzzleRoom4: To the north a iris door sweeps open as you approach",
       "ChosenSpiderRoom: Covering the door to the west, thin strands of the Crawlers webbing can be seen."
     ]
   },
@@ -176,12 +179,12 @@
     "interactions": [
       "Check Cluster#There is something under-neath, but you can-not tell what it is. ",
       "Scan#Underneath the colony is a red substance, housed in a fractured container like both metal and stone. Judging by its effects on the local biology, it seems to have healing and bio-accelerating proper-ties.",
-      "Interact#You tear the Health Pack item lose. As you hold it aloft, a little bit drips down from the ruptured container, instantly mending the section of armor it falls on"
+      "Interact With Health Pack# You tear the item lose. As you hold it aloft, a little bit drips down from the ruptured container, instantly mending the section of armor it falls on"
     ],
     "roomMons": "None",
     "roomItem": "IT1",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenFungusRoom: The collapsed floor lead back down. "
     ]
@@ -196,9 +199,9 @@
     "roomMons": "ChosenFungus",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
-      "PuzzleRoom3: Back towards the central chamber, there is an opening in the fungus.",
+      "PuzzleRoom4: Back towards the central chamber, there is an opening in the fungus.",
       "ShadowRoom2: Continuing forward, the next room is guarded by a strange shield that deactivates as you approach"
     ]
   },
@@ -212,7 +215,7 @@
     "roomMons": "None",
     "roomItem": "IT5",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenFungusRoom: Back towards the central chamber, the fungus has already begun to spread past the shield",
       "KeyRoom1: Further in, a grand archway of twisted metal and thick cords beckons you"
@@ -221,18 +224,18 @@
   {
     "roomID": "13",
     "roomTitle": "KeyRoom1",
-    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.Hanging suspended in front of you is what appears to be a piece of a small object, similar in shape to the craving you saw in the Cathedral.",
+    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.[Hanging suspended in front of you is what appears to be a piece of a small object, similar in shape to the craving you saw in the Cathedral.]",
     "interactions": [
       "Interact With Key#You reach out, plucking the key piece from its place. As you examine it a deep feeling of satisfaction suffuses you, both from within and without."
     ],
     "roomMons": "None",
-    "roomItem": "None",
+    "roomItem": "One of the 3 missing pieces ",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenSnakeRoom: Faint cries of pain can be heard from beyond the door to the south)",
       "ShadowRoom2: From the west, mocking laughter can hear coming through the arch-way.",
-      "Hall3: A ragged tear in space itself has appeared behind you, through it you can see the Central Chamber(You can You This Portal to go Back to PuzzleRoom1)"
+      "PuzzleRoom1: A ragged tear in space itself has appeared behind you, through it you can see the Central Chamber(You can You This Portal to go Back to PuzzleRoom1)"
     ]
   },
   {
@@ -240,12 +243,12 @@
     "roomTitle": "Hall3",
     "roomDesc": "A dark passageway with three distant openings branching off in each direction  ",
     "interactions": [
-      "Continue#There is Nothing to Interact With in this room"
+      ""
     ],
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenSlimeRoom: To the west, near the end of the hallway, a hole appears to have been burned through the wall",
       "ItemRoom3: To the east, at the end of the hallway an iris door swooshes open as you draw near",
@@ -296,9 +299,9 @@
       "Continue#The Capsule Scans predict that the capsule has anti-viral properties, and might mitigate the deadly symptoms of the Infection."
     ],
     "roomMons": "None",
-    "roomItem": "IT4",
+    "roomItem": "Elixir",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ShadowRoom3: The door behind you remains jammed open by the fleshy goo"
     ]
@@ -313,7 +316,7 @@
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "Hall3: The panel back into the hallway still remains open. ",
       "ChosenTreeRoom: A trail of the crimson liquid flows outwards from the door to the east"
@@ -329,7 +332,7 @@
     "roomMons": "ChosenTree",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ShadowRoom3: To the west, on the left-hand side, is a door. It weeps that crimson liquid.",
       "ItemRoom3: To the west, on the right-hand side, is a strangely normal door",
@@ -346,7 +349,7 @@
     "roomMons": "ChosenEgg",
     "roomItem": "IT3",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ItemRoom5: Groping through the darkness you find a recess leading further on.",
       "ChosenDeathRoom: A shining light to the east is far too quickly consumed by the darkness. "
@@ -362,7 +365,7 @@
     "roomMons": "ChosenDeath",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ItemRoom5: As you approach the door to the east, it opens gracefully, almost welcoming. ",
       "ChosenEggRoom: The entrance to the west suddenly drops to darkness. ",
@@ -381,7 +384,7 @@
     "roomMons": "None",
     "roomItem": "IT1",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenEggRoom: To the west, the corridor becomes increasing dark",
       "ShadowRoom5: To the east, the hallway continues on. "
@@ -397,7 +400,7 @@
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenDeathRoom: Brilliant light spill between the crack in the door to the east",
       "KeyRoom2: A long hallway reaches further south, you think you might see dead body impeded in the ground"
@@ -406,7 +409,7 @@
   {
     "roomID": "24",
     "roomTitle": "KeyRoom2",
-    "roomDesc": "This room surprises you with an all pervading feeling of peace, something about this room feels right.",
+    "roomDesc": "This room surprises you with an all-pervading feeling of peace, something about this room feels right.",
     "interactions": [
       "Interact With Key#You reach out, plucking the key piece from its place. As you examine it a deep feeling of satisfaction suffuses you, both from within and without."
     ],
@@ -415,7 +418,8 @@
     "roomPuzzle": "None",
     "roomDescSecond": "Hanging suspended in front of you is what appears to be a piece of a small object, similar in shape to the craving you saw in the Cathedral",
     "exitRooms": [
-      "ShadowRoom6: Through the cracks in the door, a brilliant light leaks through.",
+      "ShadowRoom6",
+      "CyberDeathRoom: Through the cracks in the door, a brilliant light leaks through.",
       "PuzzleRoom1: A ragged tear in space itself has appeared behind you, through it you can see the Central Chamber(You can You This Portal to go Back to PuzzleRoom1)"
     ]
   },
@@ -425,18 +429,19 @@
     "roomDesc": "This room is massive, around as large as the central chamber. Doors lead in every direction, but two catch you eye. They stand opposite the room of each other, large and imposing. Standing in the center of the room are 8 monolithic statues, who you recognize as the monsters who have fought on your journey through out the temple.",
     "interactions": [
       "Check Eastern Gate#As you approach this gate, It writhes, twisting and bending on itself until it reaches a rough approximation of human numerals, It occurs to you that the number is the same as the number of monsters you’ve killed in this place.",
+      "6#The Door snaps in half and folds in on itself, revealing an-other key room",
       "Check Western Gate#As you approach the gate, three carved shapes like the key pieces you’ve gathered emerge, All three shapes glow, and the door shifts and clanks, slowly rotating into itself, until its just a metal ball, which falls to the floor with a clunk"
     ],
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "PuzzleRoom3: Two great slabs of unidentified mate-rial sit to the north, a unreadable text scrawled across them. They shudder open as you approach",
-      "PuzzleRoom2: An elaborate mesh of hands like needles envelop an archway to the south. A gentle golden light leaks out.",
+      "PuzzleRoom4: An elaborate mesh of hands like needles envelop an archway to the south. A gentle golden light leaks out.",
       "ChosenSnakeRoom: Screams of Agony can be heard even though the thick metal of the door to the Northeast Even though you already kill the thing",
       "KeyRoom3: A great Gate of metal, stone, and stranger things dominates the eastern side of the room. ",
-      "ChosenGiantRoom: A similar Gate stands on the western wall, albie even larger. Strange mutterings can be heard beyond it."
+      "ChosenGiantRoom: A similar Gate stands on the west-ern wall, albite even larger. Strange mutterings can be heard beyond it."
     ]
   },
   {
@@ -449,7 +454,7 @@
     "roomMons": "ChosenSnake",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "KeyRoom3: A door lies north, back towards the central chamber",
       "ShadowRoom5: The door to the south opens a you walk near."
@@ -479,8 +484,8 @@
     ],
     "roomMons": "ChosenGiant",
     "roomItem": "None",
-    "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomPuzzle": "Puzzle7",
+    "roomDescSecond": "",
     "exitRooms": [
       "ItemRoom6: A simplistic door sits on the eastern side of the south-ern wall, it seem small in the large room. ",
       "ShadowRoom6: On the western side of the southern wall is a door adorned with picot-grams of the what appears to be the Giant.",
@@ -492,12 +497,12 @@
     "roomTitle": "ItemRoom6",
     "roomDesc": "This room is relatively simple and without ornamentation. In the center stands a pedestal containing a red capsule.",
     "interactions": [
-      "Continue#There is Nothing to Interact With in this room"
+      " "
     ],
     "roomMons": "None",
     "roomItem": "IT1",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ChosenGiantRoom: The door to the north lead back to the Giant’s hallway",
       "ShadowRoom7: To west is adorned with pictures of the giant"
@@ -508,16 +513,15 @@
     "roomTitle": "ShadowRoom7",
     "roomDesc": "This room is covered wall to wall with screens, holograms, and text depicting the giant chained outside leading a horde of abominations against a race of beings similar in shape to it. Others show various other Chosen committing similar atrocities.",
     "interactions": [
-      "Continue#There is Nothing to Interact With in this room"
+      " "
     ],
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
       "ItemRoom: To the east is a simple door.",
-      "ChosenGiantRoom: To the north is a door leading back to the Giant’s hallway. ",
-      "FinalHall:"
+      "ChosenGiantRoom: To the north is a door leading back to the Giant’s hall-way. "
     ]
   },
   {
@@ -528,11 +532,11 @@
       "Check Body#It is your target, You’ve come all this way, and it was for nothing, you can’t even remove his body for payment. YOU CANNOT EVEN LEAVE."
     ],
     "roomMons": "None",
-    "roomItem": "IT6",
+    "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None",
+    "roomDescSecond": "",
     "exitRooms": [
-      "OldGodRoom: The door ahead of you buzzes and blurs, spasmodically fading in and out of sync with the rest of the world. YOU CANNOT GO BACK"
+      "The door ahead of you buzzes and blurs, spasmodically fading in and out of sync with the rest of the world. YOU CANNOT GO BACK"
     ]
   },
   {
@@ -540,12 +544,12 @@
     "roomTitle": "OldGodRoom",
     "roomDesc": " A million eyes watch you from a hundred thousand screens, a great Thing rears up before you, it numerable hands like needles and data ports, reach towards you and everything else, Its mouths open, a voice in you head and you ears and your eyes and your bones rings CHOOSE",
     "interactions": [
-      "What is this#This is The END"
+      " "
     ],
     "roomMons": "None",
     "roomItem": "None",
     "roomPuzzle": "None",
-    "roomDescSecond": "None"
+    "roomDescSecond": ""
   }
 
 ]

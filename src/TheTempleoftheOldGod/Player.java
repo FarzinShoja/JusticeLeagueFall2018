@@ -17,6 +17,7 @@ public class Player {
         this.playerInfection = 0;
         this.playerShield = 1;
     }
+
     public String getPlayerName() {
         return playerName;
     }
