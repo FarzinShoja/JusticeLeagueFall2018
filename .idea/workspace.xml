@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02ebca53-27e4-4056-8ba7-54d879c1c7df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Monsters.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/Monsters.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/Rooms.json" beforeDir="false" afterPath="$PROJECT_DIR$/res/Rooms.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/Puzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheTempleoftheOldGod/ReadJSonFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheTempleoftheOldGod/ReadJSonFile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TheTempleoftheOldGodFinalVersion2/TheTempleoftheOldGod" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -72,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628706697891</updated>
-      <workItem from="1628706699374" duration="2842000" />
+      <workItem from="1628706699374" duration="8092000" />
     </task>
     <servers />
   </component>

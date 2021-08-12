@@ -1,10 +1,10 @@
 package TheTempleoftheOldGod;
 
 
+import java.util.Random;
+
 public class Monster {
 
-
-    Player player = new Player();
 
     private int monsterID;
     private String monsterName;
@@ -17,11 +17,9 @@ public class Monster {
     private String monsterLightDesc;
     private int monsterHeavyDmg;
     private String monsterHeavyDesc;
-    private boolean isAlive = true;
 
 
     public Monster() {
-
     }
 
     public int getMonsterID() {
@@ -38,6 +36,14 @@ public class Monster {
 
     public void setMonsterName(String monsterName) {
         this.monsterName = monsterName;
+    }
+
+    public String getMonsterSecondName() {
+        return monsterSecondName;
+    }
+
+    public void setMonsterSecondName(String monsterSecondName) {
+        this.monsterSecondName = monsterSecondName;
     }
 
     public String getMonsterDesc() {
@@ -80,6 +86,14 @@ public class Monster {
         this.monsterLightDmg = monsterLightDmg;
     }
 
+    public String getMonsterLightDesc() {
+        return monsterLightDesc;
+    }
+
+    public void setMonsterLightDesc(String monsterLightDesc) {
+        this.monsterLightDesc = monsterLightDesc;
+    }
+
     public int getMonsterHeavyDmg() {
         return monsterHeavyDmg;
     }
@@ -96,36 +110,11 @@ public class Monster {
         this.monsterHeavyDesc = monsterHeavyDesc;
     }
 
-    public String getMonsterSecondName() {
-        return monsterSecondName;
-    }
-
-    public void setMonsterSecondName(String monsterSecondName) {
-        this.monsterSecondName = monsterSecondName;
-    }
-
-    public String getMonsterLightDesc() {
-        return monsterLightDesc;
-    }
-
-    public void setMonsterLightDesc(String monsterLightDesc) {
-        this.monsterLightDesc = monsterLightDesc;
-    }
-
-    public boolean isAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-
 
     @Override
     public String toString() {
         return "Monster{" +
-                "player=" + player +
-                ", monsterID=" + monsterID +
+                "monsterID=" + monsterID +
                 ", monsterName='" + monsterName + '\'' +
                 ", monsterSecondName='" + monsterSecondName + '\'' +
                 ", monsterDesc='" + monsterDesc + '\'' +
@@ -136,15 +125,14 @@ public class Monster {
                 ", monsterLightDesc='" + monsterLightDesc + '\'' +
                 ", monsterHeavyDmg=" + monsterHeavyDmg +
                 ", monsterHeavyDesc='" + monsterHeavyDesc + '\'' +
-                ", isAlive=" + isAlive +
                 '}';
     }
 
     public String extractMonsterName(String currentMonsterRoom, Monster[] monsters) {
         String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterRoom.equalsIgnoreCase(monsters[i].getMonsterRoom())) {
-                s = monsters[i].getMonsterName();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterName();
             }
         }
         return s;
@@ -152,9 +140,9 @@ public class Monster {
 
     public String extractMonsterSecondName(String currentMonsterRoom, Monster[] monsters) {
         String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterRoom.equalsIgnoreCase(monsters[i].getMonsterRoom())) {
-                s = monsters[i].getMonsterSecondName();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterSecondName();
             }
         }
         return s;
@@ -162,92 +150,74 @@ public class Monster {
 
     public String extractMonsterDesc(String currentMonsterRoom, Monster[] monsters) {
         String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterRoom.equalsIgnoreCase(monsters[i].getMonsterRoom())) {
-                s = monsters[i].getMonsterDesc();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterDesc();
             }
         }
         return s;
     }
 
-    public String extractMonsterRoom(String currentMonsterName, Monster[] monsters) {
-        String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterRoom();
-            }
-        }
-        return s;
-    }
-
-    public int extractMonsterLightDmg(String currentMonsterName, Monster[] monsters) {
+    public int extractMonsterLightDmg(String currentMonsterRoom, Monster[] monsters) {
         int s = 0;
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterLightDmg();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterLightDmg();
             }
 
         }
         return s;
     }
 
-    public String extractMonsterLightDesc(String currentMonsterName, Monster[] monsters) {
-        String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterLightDesc();
-            }
-        }
-        return s;
-    }
 
-    public int extractMonsterHeavyDmg(String currentMonsterName, Monster[] monsters) {
+    public int extractMonsterHeavyDmg(String currentMonsterRoom, Monster[] monsters) {
         int s = 0;
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterHeavyDmg();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterHeavyDmg();
             }
 
         }
         return s;
     }
 
-    public String extractMonsterHeavyDesc(String currentMonsterName, Monster[] monsters) {
-        String s = "";
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterName.equalsIgnoreCase(monsters[i].getMonsterName())) {
-                s = monsters[i].getMonsterHeavyDesc();
-            }
-        }
-        return s;
-    }
 
     public int extractMonsterHealth(String currentMonsterRoom, Monster[] monsters) {
         int s = 0;
-        for (int i = 0; i < monsters.length; i++) {
-            if (currentMonsterRoom.equalsIgnoreCase(monsters[i].getMonsterRoom())) {
-                s = monsters[i].getMonsterHealth();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                s = monster.getMonsterHealth();
             }
 
         }
         return s;
     }
 
-    public void monsterTakeDMG(int damage) {
-        monsterHealth -= damage;
-        if (monsterHealth < 0) {
-            monsterHealth = 0;
+    public int giveDMG(String currentMonsterRoom, Monster[] monsters) {
+        int dmg = 0;
+        Random random = new Random();
+        for (Monster monster : monsters) {
+            if (currentMonsterRoom.equalsIgnoreCase(monster.getMonsterRoom())) {
+                if (random.nextBoolean()) {
+                    dmg = monster.getMonsterHeavyDmg();
+                } else
+                    dmg = monster.getMonsterLightDmg();
+
+            }
         }
+
+        return dmg;
     }
 
-    public void monsterGiveDMG(int damage) {
-        player.setPlayerHealth(-(damage));
-    }
 
-    public void monsterIsDead(Monster monster) {
-        if ((monster.getMonsterHealth() <= 0)) {
-            isAlive = false;
+    public int takeDMG(int dmg, int monsterHealth) {
+        int mH = monsterHealth - dmg;
+        if (mH < 0) {
+            mH = 0;
         }
+        System.out.println("Monster ♥ " + mH);
+        return mH;
+
     }
 
 }

@@ -12,14 +12,12 @@ public class ReadJSonFile {
     public Room[] rooms;
     public Item[] items;
     public Monster[] monsters;
-    public Puzzle[] puzzles;
 
     public ReadJSonFile() {
         try {
             readRoomJson();
             readItemJson();
             readMonsterJson();
-            readPuzzleJson();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -44,13 +42,6 @@ public class ReadJSonFile {
         String str1 = FileUtils.readFileToString(new File("res/Monsters.json"), StandardCharsets.UTF_8);
         ObjectMapper om1 = new ObjectMapper();
         monsters = om1.readValue(str1, Monster[].class);
-    }
-
-    //This Method Is Responsible for Reading The Puzzle JSON File, and Returns it in Array
-    public void readPuzzleJson() throws Exception {
-        String str1 = FileUtils.readFileToString(new File("res/Puzzles.json"), StandardCharsets.UTF_8);
-        ObjectMapper om1 = new ObjectMapper();
-        puzzles = om1.readValue(str1, Puzzle[].class);
     }
 }
 

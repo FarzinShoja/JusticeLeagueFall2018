@@ -1,173 +1,72 @@
 package TheTempleoftheOldGod;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.Scanner;
 
 public class Puzzle {
 
 
-    private Map<String, String> interactionMap = new LinkedHashMap<>();
-    private int PuzzleID;
-    private String puzzleName;
-    private String[] interactions;
-    private String puzzleItem;
-    private String puzzleRoom;
+    Scanner puzzleInputScanner = new Scanner(System.in);
 
 
-    public Puzzle() {
+    public void getPuzzle(String currentRoomTitle) {
 
-    }
 
-    public static void main(String[] args) {
-        ReadJSonFile read = new ReadJSonFile();
-        Puzzle[] puzzleHolder = read.puzzles;
-        Puzzle puz = new Puzzle();
-        puz.extractPuzzleInter("Rubble", puzzleHolder);
-    }
-
-    public int getPuzzleID() {
-
-        return PuzzleID;
-    }
-
-    public void setPuzzleID(int puzzleID) {
-
-        PuzzleID = puzzleID;
-    }
-
-    public String[] getInteractions() {
-
-        return interactions;
-    }
-
-    public void setInteractions(String[] interactions) {
-        this.interactions = interactions;
-    }
-
-    public String getPuzzleName() {
-
-        return puzzleName;
-    }
-
-    public void setPuzzleName(String puzzleName) {
-
-        this.puzzleName = puzzleName;
-    }
-
-    public Map<String, String> getInteractionMap() {
-        return interactionMap;
-    }
-
-    public void setInteractionMap(Map<String, String> interactionMap) {
-        this.interactionMap = interactionMap;
-    }
-
-    public String getPuzzleItem() {
-
-        return puzzleItem;
-    }
-
-    public void setPuzzleItem(String puzzleItem) {
-
-        this.puzzleItem = puzzleItem;
-    }
-
-    public String getPuzzleRoom() {
-
-        return puzzleRoom;
-    }
-
-    public void setPuzzleRoom(String puzzlePuzzle) {
-
-        this.puzzleRoom = puzzleRoom;
-    }
-
-    @Override
-    public String toString() {
-        return "Puzzle{" +
-                "interactionMap=" + interactionMap +
-                ", PuzzleID=" + PuzzleID +
-                ", puzzleTitle='" + puzzleName + '\'' +
-                ", interactions=" + Arrays.toString(interactions) +
-                ", puzzleItem='" + puzzleItem + '\'' +
-                ", puzzlePuzzle='" + puzzleRoom + '\'' +
-                '}';
-    }
-
-    public ArrayList extractAllPuzzleNames(Puzzle[] puzzles) {
-        ArrayList titleList = new ArrayList();
-        for (int i = 0; i < puzzles.length; i++) {
-            titleList.add(puzzles[i].getPuzzleName());
-        }
-        return titleList;
-    }
-
-    public String extractPuzzleItem(String currentPuzzleName, Puzzle[] puzzles) {
-        String s = "";
-        for (int i = 0; i < puzzles.length; i++) {
-            if (currentPuzzleName.equalsIgnoreCase(puzzles[i].getPuzzleName())) {
-                s = puzzles[i].getPuzzleItem();
+        if (currentRoomTitle.equalsIgnoreCase("Outside")) {
+            System.out.println("So What Should You DO With Ship That Contains Missie and Block Path");
+            while (true) {
+                String puzzleInputString = puzzleInputScanner.nextLine();
+                if (puzzleInputString.equalsIgnoreCase("Fire")) {
+                    System.out.println("the missiles into the rubble, clearing the way into the Temple");
+                    break;
+                } else {
+                    System.out.println("Try Again");
+                }
             }
-        }
-        return s;
-    }
 
-    public String extractPuzzleRoom(String currentPuzzleName, Puzzle[] puzzles) {
-        String s = "";
-        for (int i = 0; i < puzzles.length; i++) {
-            if (currentPuzzleName.equalsIgnoreCase(puzzles[i].getPuzzleName())) {
-                s = puzzles[i].getPuzzleRoom();
-            }
         }
-        return s;
-    }
 
-    public void extractPuzzleInter(String currentPuzzleName, Puzzle[] puzzles) {
-        ArrayList<String> puzzleIner = new ArrayList();
-        interactionMap.clear();
-        for (int i = 0; i < puzzles.length; i++) {
-            if (currentPuzzleName.equalsIgnoreCase(puzzles[i].getPuzzleName())) {
-                //ENHANCED FOR LOOP>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BELOW
-                // for(String s: puzzles[i].getInteractions()){
-                // }
-                for (int x = 0; x < puzzles[i].getInteractions().length; x++) {
-                    String q = puzzles[i].getInteractions()[x];
-                    puzzleIner.add(q);
+
+        if (currentRoomTitle.equalsIgnoreCase("PuzzleRoom1")) {
+            System.out.println("Maybe You Use one Of Your Weapons to Melt the Ice ");
+            System.out.println(" 'Extra Vehicular Assault Rifle, 'Flamethrower, 'The Clyde-15 ");
+            while (true) {
+                String puzzleInputString = puzzleInputScanner.nextLine();
+                if (puzzleInputString.equalsIgnoreCase("Flamethrower")) {
+                    System.out.println("Nice Job, by Examining the Room you should be able to see a reward for solving this puzzle");
+                    break;
+                } else {
+                    System.out.println("Try Again");
                 }
             }
         }
-        for (String q : puzzleIner) {
-            String[] holder = q.split("#");
-            interactionMap.put(holder[0], holder[1]);
-        }
-    }
 
-    public String currentPuzzleName(int pID, Puzzle[] puzzles) {
-        String s = "";
-        for (int i = 0; i < puzzles.length; i++) {
-            if (puzzles[i].getPuzzleID() == pID) {
-                s = puzzles[i].getPuzzleName();
-            } else {
-                //Do Nothing...
+        if (currentRoomTitle.equalsIgnoreCase("PuzzleRoom2")) {
+            System.out.println("Within me is a great artifact of our Most Holy, prove you Worth by answering this question, “What is the Esteemed name of the Great One’s Servants");
+            while (true) {
+                String puzzleInputString = puzzleInputScanner.nextLine();
+                if (puzzleInputString.equalsIgnoreCase("The Chosen")) {
+                    System.out.println("Nice Job, by Examining the Room you should be able to see a reward for solving this puzzle");
+                    break;
+                } else {
+                    System.out.println("Try Again");
+                }
             }
         }
-        return s;
-    }
 
-    public int extractPuzzleID(String newPuzzleName, Puzzle[] puzzles) {
-        int newPuzzleID = 0;
-        for (int i = 0; i < puzzles.length; i++) {
-            if (newPuzzleName.equalsIgnoreCase(puzzles[i].getPuzzleName())) {
-                newPuzzleID = puzzles[i].getPuzzleID();
-            } else {
-                //Do Nothing
+
+        if (currentRoomTitle.equalsIgnoreCase("PuzzleRoom3")) {
+            System.out.println("Numbers arise on the screen, they appear to be binary “0101, 1010, 0110 , “Input the correct number in base 10");
+            while (true) {
+                String puzzleInputString = puzzleInputScanner.nextLine();
+                if (puzzleInputString.equalsIgnoreCase("5, 10, 6")) {
+                    System.out.println("Nice Job, by Examining the Room you should be able to see a reward for solving this puzzle");
+                    break;
+                } else {
+                    System.out.println("Try Again");
+                }
             }
         }
-        return newPuzzleID;
+
+
     }
 }
-
-
-

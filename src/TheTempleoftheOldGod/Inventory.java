@@ -83,7 +83,7 @@ public class Inventory {
             for (Map.Entry<String, ArrayList<String>> entry : inventoryMap.entrySet()) {
                 String itemID = entry.getKey();
                 ArrayList value = entry.getValue();
-                System.out.println(itemID + " " + value.get(0) + " x" + value.get(3));
+                System.out.println(itemID + " " + value.get(0) + " x→ " + value.get(3));
             }
         }
     }
@@ -96,52 +96,51 @@ public class Inventory {
                 '}';
     }
 
-    public void setDefults(Item[] items) {
+    public void setDefaults(Item[] items) {
         String[] def = {"IT7", "IT8", "IT9"};
         for (int i = 2; i >= 0; i--) {
-            ArrayList<String> itemDefult = new ArrayList<>();
+            ArrayList<String> itemDefaults = new ArrayList<>();
             String str = def[i];
             String s = "";
             for (int x = 0; x < items.length; x++) {
                 if (items[x].getItemID().equals(str)) {
-                    itemDefult.clear();
-                    itemDefult.add(items[x].getItemID());
-                    itemDefult.add(items[x].getItemTitle());
-                    itemDefult.add(items[x].getItemDesc());
-                    itemDefult.add(items[x].getItemType());
-                    itemDefult.add(items[x].getitemEquippable());
-                    itemDefult.add(items[x].getItemUsable());
-                    itemDefult.add(items[x].getItemDamage());
-                    itemDefult.add(items[x].getItemHealAmount());
-                    itemDefult.add(items[x].getItemInfectionAmount());
-                    itemDefult.add(items[x].getItemAmmo());
-
+                    itemDefaults.clear();
+                    itemDefaults.add(items[x].getItemID());
+                    itemDefaults.add(items[x].getItemTitle());
+                    itemDefaults.add(items[x].getItemDesc());
+                    itemDefaults.add(items[x].getItemType());
+                    itemDefaults.add(items[x].getItemEquippable());
+                    itemDefaults.add(items[x].getItemUsable());
+                    itemDefaults.add(items[x].getItemDamage());
+                    itemDefaults.add(items[x].getItemHealAmount());
+                    itemDefaults.add(items[x].getItemInfectionAmount());
+                    itemDefaults.add(items[x].getItemAmmo());
                     s = items[x].getItemType();
                 }
             }
-            equippedMap.put(s, itemDefult);
+            equippedMap.put(s, itemDefaults);
         }
     }
 
-    public void setEqupped(String itemID, Item[] items) {
+    public void setEquipped(String itemID, Item[] items) {
         ArrayList<String> itemInfo = new ArrayList<>();
         String itemType = "";
-        for (int x = 0; x < items.length; x++) {
-            if (items[x].getItemID().equalsIgnoreCase(itemID)
-                    && items[x].getitemEquippable().equalsIgnoreCase("true")) {
-                itemInfo.add(items[x].getItemID());
-                itemInfo.add(items[x].getItemTitle());
-                itemInfo.add(items[x].getItemDesc());
-                itemInfo.add(items[x].getItemType());
-                itemInfo.add(items[x].getitemEquippable());
-                itemInfo.add(items[x].getItemUsable());
-                itemInfo.add(items[x].getItemDamage());
-                itemInfo.add(items[x].getItemHealAmount());
-                itemInfo.add(items[x].getItemInfectionAmount());
-                itemInfo.add(items[x].getItemAmmo());
-                itemType = items[x].getItemType();
+        for (Item item : items) {
+            if (item.getItemID().equalsIgnoreCase(itemID)
+                    && item.getItemEquippable().equals("true")) {
+                itemInfo.add(item.getItemID());
+                itemInfo.add(item.getItemTitle());
+                itemInfo.add(item.getItemDesc());
+                itemInfo.add(item.getItemType());
+                itemInfo.add(item.getItemEquippable());
+                itemInfo.add(item.getItemUsable());
+                itemInfo.add(item.getItemDamage());
+                itemInfo.add(item.getItemHealAmount());
+                itemInfo.add(item.getItemInfectionAmount());
+                itemInfo.add(item.getItemAmmo());
+                itemType = item.getItemType();
 
-                //Takes Item from Equpped by Type then adds in inventory Map
+                //Takes Item from Equipped by Type then adds in inventory Map
                 ArrayList<String> itemHolder = equippedMap.get(itemType);
                 ArrayList<String> newInventoryItem = new ArrayList<>();
                 newInventoryItem.add(itemHolder.get(1));
@@ -153,7 +152,7 @@ public class Inventory {
                 equippedMap.remove(itemType);
 
 
-                //Adding new Item by Type to Equpped Map
+                //Adding new Item by Type to Equipped Map
                 equippedMap.put(itemType, itemInfo);
 
                 inventoryMap.remove(itemID);
@@ -163,22 +162,21 @@ public class Inventory {
 
     public String useConsumable(String itemID, Item[] items) {
         String itemHolder = "";
-        for (int x = 0; x < items.length; x++) {
-            if (items[x].getItemID().equalsIgnoreCase(itemID)
-                    && items[x].getItemType().equalsIgnoreCase("consumable")) {
+        for (Item item : items) {
+            if (item.getItemID().equalsIgnoreCase(itemID)
+                    && item.getItemType().equalsIgnoreCase("consumable")) {
 
-                if (!items[x].getItemHealAmount().equalsIgnoreCase("0")) {
-                    itemHolder = "H#" + items[x].getItemHealAmount();
-                    removeFromInventory(itemID);
+                if (!item.getItemHealAmount().equalsIgnoreCase("0")) {
+                    itemHolder = "H#" + item.getItemHealAmount();
 
                 }
-                if (!items[x].getItemInfectionAmount().equalsIgnoreCase("0")) {
-                    itemHolder = "I#" + items[x].getItemInfectionAmount();
-                    removeFromInventory(itemID);
+                if (!item.getItemInfectionAmount().equalsIgnoreCase("0")) {
+                    itemHolder = "I#" + item.getItemInfectionAmount();
+
                 }
-                if (!items[x].getItemAmmo().equalsIgnoreCase("0")) {
-                    itemHolder = "S#" + items[x].getItemAmmo();
-                    removeFromInventory(itemID);
+                if (!item.getItemAmmo().equalsIgnoreCase("0")) {
+                    itemHolder = "S#" + item.getItemAmmo();
+
                 }
 
             }
@@ -187,5 +185,28 @@ public class Inventory {
         return itemHolder;
     }
 
+    public String useEquip(String itemID, Item[] items) {
+        String itemHolder = "";
+        for (Item item : items) {
+            if (item.getItemID().equalsIgnoreCase(itemID)
+                    && item.getItemEquippable().equalsIgnoreCase("true")) {
+                itemHolder = "YES";
+            }
+        }
+        return itemHolder;
+    }
+
+    public void getEquippedPrintOut() {
+        if (equippedMap.size() == 0) {
+            System.out.println("There's nothing in your inventory");
+        } else {
+            System.out.println(" ╤╤╤╤╤╤╤╤╤╤╤╤ Choose Your Weapon ╤╤╤╤╤╤╤╤╤╤╤╤");
+            for (Map.Entry<String, ArrayList<String>> entry : equippedMap.entrySet()) {
+                String itemType = entry.getKey();
+                ArrayList value = entry.getValue();
+                System.out.println("☼☼☼☼☼ " + itemType + "  " + value.get(1) + " \nDamage: " + value.get(6) + " \nInfection Point: " + value.get(8));
+            }
+        }
+    }
 
 }

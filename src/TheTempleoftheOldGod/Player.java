@@ -1,6 +1,7 @@
 package TheTempleoftheOldGod;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Player {
     private String playerName;
@@ -16,6 +17,14 @@ public class Player {
         this.playerHealth = 50;
         this.playerInfection = 0;
         this.playerShield = 1;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
     }
 
     public String getPlayerName() {
@@ -86,16 +95,12 @@ public class Player {
                 ", playerMainGun=" + playerMainGun +
                 ", playerHeavyWeapon=" + playerHeavyWeapon +
                 ", playerSideArmWeapon=" + playerSideArmWeapon +
+                ", isAlive=" + isAlive +
                 '}';
     }
 
-    public void isDead(Player player) {
-        if ((player.getPlayerHealth() <= 0) || (player.playerInfection == 100)) {
-            isAlive = false;
-        }
-    }
-
     public void usedConsumable(String str) {
+
         String[] parts = str.split("#");
         String part1 = parts[0];
         String part2 = parts[1];
@@ -104,7 +109,7 @@ public class Player {
             if (playerHealth > 100) {
                 playerHealth = 100;
             }
-            System.out.println("The Player Health Is Now :" + playerHealth);
+            System.out.println("The Player Health Is Now: " + playerHealth);
         }
 
         if (part1.equals("I")) {
@@ -115,12 +120,48 @@ public class Player {
             if (playerInfection >= 100) {
                 isAlive = false;
             }
-            System.out.println("The Player Infection Is Now :" + playerInfection);
+            System.out.println("The Player Infection Is Now: " + playerInfection);
         }
         if (part1.equals("S")) {
             playerShield += Integer.parseInt(part2);
-            System.out.println("The Player Shield Charges Is Now at:" + playerShield);
+            System.out.println("The Player Shield Charges Is Now at: " + playerShield);
         }
-
     }
+
+    public void isDead() {
+        if ((playerHealth <= 0) || (playerInfection == 100)) {
+            isAlive = false;
+        }
+    }
+
+    public void takeDMG(int damage) {
+        int pH = getPlayerHealth();
+        setPlayerHealth(pH - damage);
+
+        if (getPlayerHealth() <= 0) {
+            setPlayerHealth(0);
+        }
+        System.out.println("Player ♥ " + getPlayerHealth());
+    }
+
+    public void blockDMG() {
+        playerShield -= 1;
+    }
+
+    public int giveDMG(String itemType, Inventory inv) {
+        int dmg = 0;
+        Map<String, ArrayList<String>> newMap = inv.getEquippedMap();
+        for (Map.Entry<String, ArrayList<String>> entry : newMap.entrySet()) {
+            String itemID = entry.getKey();
+            ArrayList value = entry.getValue();
+            if (itemID.equals(itemType)) {
+                playerInfection += Integer.parseInt(String.valueOf(value.get(8)));
+                dmg += Integer.parseInt(String.valueOf(value.get(6)));
+
+                break;
+            }
+        }
+        return dmg;
+    }
+
 }

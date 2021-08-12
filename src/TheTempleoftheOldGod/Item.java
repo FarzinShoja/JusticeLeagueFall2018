@@ -1,7 +1,5 @@
 package TheTempleoftheOldGod;
 
-import java.util.ArrayList;
-
 public class Item {
     private String itemID;
     private String itemTitle;
@@ -13,14 +11,6 @@ public class Item {
     private String itemHealAmount;
     private String itemInfectionAmount;
     private String itemAmmo;
-
-    public static ArrayList<String> extractAllItemTitles(Item[] items) {
-        ArrayList<String> titleList = new ArrayList<>();
-        for (Item item : items) {
-            titleList.add(item.getItemTitle());
-        }
-        return titleList;
-    }
 
     public String getItemID() {
 
@@ -59,11 +49,11 @@ public class Item {
         this.itemType = itemType;
     }
 
-    public String getitemEquippable() {
+    public String getItemEquippable() {
         return itemEquippable;
     }
 
-    public void setitemEquippable(String itemEquippable) {
+    public void setItemEquippable(String itemEquippable) {
         this.itemEquippable = itemEquippable;
     }
 
@@ -122,69 +112,5 @@ public class Item {
                 ", itemAmmo='" + itemAmmo + '\'' +
                 '}';
     }
-
-    public String extractItemDesc(String currentItemTitle, Item[] items) {
-        String s = "";
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = items[i].getItemDesc();
-            }
-        }
-        return s;
-    }
-
-    public String extractItemType(String currentItemTitle, Item[] items) {
-        String s = "";
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = items[i].getItemType();
-            }
-        }
-        return s;
-    }
-
-    public boolean extractitemEquippable(String currentItemTitle, Item[] items) {
-        boolean s = true;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquippable());
-            }
-        }
-        return s;
-    }
-
-    public boolean extractItemUsabable(String currentItemTitle, Item[] items) {
-        boolean s = true;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Boolean.parseBoolean(items[i].getitemEquippable());
-            }
-        }
-        return s;
-    }
-
-    public int extractItemDamage(String currentItemTitle, Item[] items) {
-        int s = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (currentItemTitle.equalsIgnoreCase(items[i].getItemTitle())) {
-                s = Integer.parseInt(items[i].getItemDamage());
-            }
-
-        }
-        return s;
-    }
-
-    public String extractCurrentItemTitle(String itemID, Item[] items) {
-        String s = "";
-        for (int i = 0; i < items.length; i++) {
-            if (items[i].getItemTitle() == itemID) {
-                s = items[i].getItemTitle();
-            } else {
-                //Do Nothing...
-            }
-        }
-        return s;
-    }
-
 
 }
